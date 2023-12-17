@@ -1,0 +1,14 @@
+﻿@model Login
+
+<h2>Login Sayfasi</h2>
+<form asp-action="Login" asp-controller="Ucus" method="post">
+    <div>
+        <label for="KullanciAdi">Kullanci Adi :</label>
+        <input type="text" id="KullanciAdi" name="KullanciAdi" required />
+    </div>
+    <div>
+        <label for="Sifre">Şifre :</label>
+        <input type="password" id="Sifre" name="Sifre" required />
+    </div>  
+    <button type="submit">Login</button>
+</form>
