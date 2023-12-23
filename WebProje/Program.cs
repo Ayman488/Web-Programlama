@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using WebProje.Models;
+using Microsoft.AspNetCore.Identity;
+using WebProje.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<DbContextUcus>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
 
