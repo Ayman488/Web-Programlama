@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using WebProje.Models;
-using Microsoft.AspNetCore.Identity;
-using WebProje.Data;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,7 +11,6 @@ builder.Services.AddDbContext<DbContextUcus>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Ucus}/{action=Login}/{id?}");
 
 app.Run();

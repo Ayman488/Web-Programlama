@@ -1,11 +1,18 @@
-﻿namespace WebProje.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebProje.Models
 {
     public class Rezervasyon
     {
+        [Key]
         public int Id { get; set; }
-        public int YolId { get; set; }
-        public int UcakId { get; set; }
+        [Required]
         public int KoltukNumarasi { get; set; }
-        public string YolcuAdi { get; set; }
+        [Required]
+        public Yol Yol { get; set; }
+        [Required]
+        public int Ucak { get; set; }
+        [Required]
+        public YeniKullanci YolcuAdi { get; set; }
     }
 }

@@ -1,10 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebProje.Models;
 
 namespace WebProje.Controllers
 {
     public class UcusController : Controller
     {
+        private readonly DbContextUcus _context;
+        public UcusController(DbContextUcus context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
             return View();
@@ -36,13 +42,64 @@ namespace WebProje.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult Login(Login model)
+        public interface IUserRepository
         {
+            YeniKullanci GetUserByEmail(string email);
+        }
+        public class UserRepository : IUserRepository
+        {
+            private readonly DbContextUcus _context;
+
+            public UserRepository(DbContextUcus context)
+            {
+                _context = context;
+            }
+
+            public YeniKullanci GetUserByEmail(string email)
+            {
+                return _context.yeniKullancis.FirstOrDefault(u => u.Email == email);
+            }
+        }
+        [HttpPost]
+        public IActionResult Login(Login login)
+        {
+            const string adminEmail = "admin@example.com";
+            const string adminPassword = "adminPassword";
             // قم بتنفيذ عمليات تسجيل الدخول هنا
             // ...
+            if (login.Email == "G201210591@Sakarya.edu.tr" && login.Sifre == "sau")
+            {
+                // تسجيل الدخول ناجح
+                // ربما تقوم بتعيين جلسة للمستخدم أو تقوم بأية إجراءات إضافية
+                return RedirectToAction("AdminSayfasi", "Admin");
+            }
+            else if((_context.yeniKullancis?.Any(e => e.Email == login.Email)).GetValueOrDefault())
+            {
 
-            return RedirectToAction("Index");
+                return View("AnaSayfaYolSecme");
+            }
+            else
+                return View();
+            //string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
+
+                //var user = _context.GetUserByEmail(login.Email);
+                //if (user != null && BCrypt.Verify(login.Sifre, user.passwordHash))
+                //{
+                //    // تعيين جلسة المستخدم
+                //    // ...
+
+                //    if (user.Role == "Admin")
+                //    {
+                //        return RedirectToAction("AdminSayfasi");
+                //    }
+                //    else
+                //    {
+                //        // توجيه المستخدم إلى صفحة أخرى
+                //    }
+                //}
+            
+
         }
+        
     }
 }

@@ -1,14 +1,34 @@
 ﻿@model Login
 
-<h2>Login Sayfasi</h2>
-<form asp-action="Login" asp-controller="Ucus" method="post">
-    <div>
-        <label for="KullanciAdi">Kullanci Adi :</label>
-        <input type="text" id="KullanciAdi" name="KullanciAdi" required />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Login Page</h2>
+                        <form asp-action="Login" asp-controller="Ucus" method="post">
+                            <div class="form-group">
+                                <label for="Email">Email:</label>
+                                <input asp-for="Email" type="text" class="form-control" id="Email" name="Email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="Sifre">Şifre:</label>
+                                <input asp-for="Sifre" type="password" class="form-control" id="Sifre" name="Sifre" required />
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <label for="Sifre">Şifre :</label>
-        <input type="password" id="Sifre" name="Sifre" required />
-    </div>  
-    <button type="submit">Login</button>
-</form>
+</body>
+</html>

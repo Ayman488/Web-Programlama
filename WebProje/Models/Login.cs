@@ -1,8 +1,12 @@
-﻿namespace WebProje.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebProje.Models
 {
     public class Login
     {
-        public string KullanciAdi { get; set; }
+        [Key]
+        public string Email { get; set; }
+        [Required(ErrorMessage = "şifre giminiz gerekiyor!")]
         public string Sifre { get; set; }
     }
 }
