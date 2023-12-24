@@ -44,6 +44,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucak/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucak/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucak/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucak/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucus/AnaSayfaYolSecme.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xBbmFTYXlmYVlvbFNlY21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -62,6 +78,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucus/RezerveKoltuk.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xSZXplcnZlS29sdHVrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Yol/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9sXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Yol/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9sXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Yol/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9sXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Yol/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9sXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/_ViewImports.cshtml]

@@ -1,6 +1,4 @@
-﻿@model WebProje.Models.Ucak
-
-@{
+﻿@{
     ViewData["Title"] = "AdminSayfasi";
 }
 
@@ -17,11 +15,17 @@
         <button type="submit" class="btn btn-success btn-block">Ucus Sayfasi</button>
     </form>
 </div>
-
-
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="card-body">
+    <h2 class="text-center mb-4">Yol</h2>
+    <form asp-action="YolEkle" asp-controller="Admin" method="post">
+        <div class="form-group">
+            <label for="YolEkle">Yol</label>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Ucus Sayfasi</button>
+    </form>
 </div>
+
+
 
 @section Scripts {
     @{

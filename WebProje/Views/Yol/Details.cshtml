@@ -1,0 +1,42 @@
+﻿@model WebProje.Models.Yol
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Yol</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KalkisSehir)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KalkisSehir)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VarisSehri)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VarisSehri)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KalkisZaman)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KalkisZaman)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VarisZaman)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VarisZaman)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-controller="Admin" asp-action="UcusEkle">Back to List</a>
+</div>

@@ -67,38 +67,24 @@ namespace WebProje.Controllers
             const string adminPassword = "adminPassword";
             // قم بتنفيذ عمليات تسجيل الدخول هنا
             // ...
+
             if (login.Email == "G201210591@Sakarya.edu.tr" && login.Sifre == "sau")
             {
+                HttpContext.Session.SetString("SessionUser", login.Email);
+                var cokOpt = new CookieOptions
+                {
+                    Expires = DateTime.Now.AddMinutes(10)
+                };
                 // تسجيل الدخول ناجح
                 // ربما تقوم بتعيين جلسة للمستخدم أو تقوم بأية إجراءات إضافية
                 return RedirectToAction("AdminSayfasi", "Admin");
             }
             else if((_context.yeniKullancis?.Any(e => e.Email == login.Email)).GetValueOrDefault())
             {
-
                 return View("AnaSayfaYolSecme");
             }
             else
                 return View();
-            //string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
-
-                //var user = _context.GetUserByEmail(login.Email);
-                //if (user != null && BCrypt.Verify(login.Sifre, user.passwordHash))
-                //{
-                //    // تعيين جلسة المستخدم
-                //    // ...
-
-                //    if (user.Role == "Admin")
-                //    {
-                //        return RedirectToAction("AdminSayfasi");
-                //    }
-                //    else
-                //    {
-                //        // توجيه المستخدم إلى صفحة أخرى
-                //    }
-                //}
-            
-
         }
         
     }
