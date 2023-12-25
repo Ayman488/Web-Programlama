@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5TYXlmYXNpLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Admin/HavalemaniEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSGF2YWxlbWFuaUVrbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Admin/SehirEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2VoaXJFa2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Admin/UcusEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVWN1c0VrbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -28,12 +36,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cWW9sRWtsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Havalemani/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YWxlbWFuaVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Havalemani/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YWxlbWFuaVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Havalemani/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YWxlbWFuaVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Havalemani/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YWxlbWFuaVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Sehir/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VoaXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Sehir/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VoaXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Sehir/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VoaXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Sehir/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VoaXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Shared/Error.cshtml]

@@ -19,12 +19,21 @@ namespace WebProje.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            if (HttpContext.Session.GetString("SessionUser") is null)
+            {
+                TempData["hata"] = "Lütfen Login olunuz";
+                return RedirectToAction("Login", "Ucus");
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create( Ucak ucak)
         {
+
            
                 _context.Add(ucak);
                 await _context.SaveChangesAsync();
@@ -33,32 +42,48 @@ namespace WebProje.Controllers
         }
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Ucaklar == null)
+            if (HttpContext.Session.GetString("SessionUser") is null)
             {
-                return NotFound();
+                TempData["hata"] = "Lütfen Login olunuz";
+                return RedirectToAction("Login", "Ucus");
             }
-
-            var kitap = await _context.Ucaklar.FirstOrDefaultAsync(m => m.Id == id);
-            if (kitap == null)
+            else
             {
-                return NotFound();
-            }
+                if (id == null || _context.Ucaklar == null)
+                {
+                    return NotFound();
+                }
 
-            return View(kitap);
+                var kitap = await _context.Ucaklar.FirstOrDefaultAsync(m => m.Id == id);
+                if (kitap == null)
+                {
+                    return NotFound();
+                }
+
+                return View(kitap);
+            }
         }
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Ucaklar == null)
+            if (HttpContext.Session.GetString("SessionUser") is null)
             {
-                return NotFound();
+                TempData["hata"] = "Lütfen Login olunuz";
+                return RedirectToAction("Login", "Ucus");
             }
+            else
+            {
+                if (id == null || _context.Ucaklar == null)
+                {
+                    return NotFound();
+                }
 
-            var kitap = await _context.Ucaklar.FindAsync(id);
-            if (kitap == null)
-            {
-                return NotFound();
+                var kitap = await _context.Ucaklar.FindAsync(id);
+                if (kitap == null)
+                {
+                    return NotFound();
+                }
+                return View(kitap);
             }
-            return View(kitap);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -90,19 +115,27 @@ namespace WebProje.Controllers
         }
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Ucaklar == null)
+            if (HttpContext.Session.GetString("SessionUser") is null)
             {
-                return NotFound();
+                TempData["hata"] = "Lütfen Login olunuz";
+                return RedirectToAction("Login", "Ucus");
             }
-
-            var kitap = await _context.Ucaklar
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (kitap == null)
+            else
             {
-                return NotFound();
-            }
+                if (id == null || _context.Ucaklar == null)
+                {
+                    return NotFound();
+                }
 
-            return View(kitap);
+                var kitap = await _context.Ucaklar
+                    .FirstOrDefaultAsync(m => m.Id == id);
+                if (kitap == null)
+                {
+                    return NotFound();
+                }
+
+                return View(kitap);
+            }
         }
 
         // POST: Kitap/Delete/5

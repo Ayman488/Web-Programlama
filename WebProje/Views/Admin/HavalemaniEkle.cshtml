@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebProje.Models.Havalemani>
+
+@{
+    ViewData["Title"] = "HavalemaniEkle";
+}
+
+<h1>HavalemaniEkle</h1>
+
+<p>
+    <a asp-controller="Havalemani" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HavalemanininAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sehir)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HavalemanininAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sehir)
+            </td>
+            <td>
+                    <a asp-controller="Havalemani" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-controller="Havalemani" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-controller="Havalemani" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <a asp-action="AdminSayfasi">Back to List</a>
+</div>

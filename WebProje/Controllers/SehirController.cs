@@ -4,10 +4,10 @@ using WebProje.Models;
 
 namespace WebProje.Controllers
 {
-    public class YolController : Controller
+    public class SehirController : Controller
     {
         private readonly DbContextUcus _context;
-        public YolController(DbContextUcus context)
+        public SehirController(DbContextUcus context)
         {
             _context = context;
         }
@@ -29,12 +29,12 @@ namespace WebProje.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Yol yol)
+        public async Task<IActionResult> Create(Sehir sehir)
         {
 
-            _context.Add(yol);
+            _context.Add(sehir);
             await _context.SaveChangesAsync();
-            return RedirectToAction("YolEkle", "Admin");
+            return RedirectToAction("SehirEkle", "Admin");
 
         }
         public async Task<IActionResult> Details(int? id)
@@ -46,18 +46,19 @@ namespace WebProje.Controllers
             }
             else
             {
-                if (id == null || _context.Yollar == null)
+
+                if (id == null || _context.sehirler == null)
                 {
                     return NotFound();
                 }
 
-                var kitap = await _context.Yollar.FirstOrDefaultAsync(m => m.Id == id);
-                if (kitap == null)
+                var sehir = await _context.sehirler.FirstOrDefaultAsync(m => m.Id == id);
+                if (sehir == null)
                 {
                     return NotFound();
                 }
 
-                return View(kitap);
+                return View(sehir);
             }
         }
         public async Task<IActionResult> Edit(int? id)
@@ -69,24 +70,24 @@ namespace WebProje.Controllers
             }
             else
             {
-                if (id == null || _context.Yollar == null)
+                if (id == null || _context.sehirler == null)
                 {
                     return NotFound();
                 }
 
-                var kitap = await _context.Yollar.FindAsync(id);
-                if (kitap == null)
+                var sehir = await _context.sehirler.FindAsync(id);
+                if (sehir == null)
                 {
                     return NotFound();
                 }
-                return View(kitap);
+                return View(sehir);
             }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Yol yol)
+        public async Task<IActionResult> Edit(int id, Sehir sehir)
         {
-            if (id != yol.Id)
+            if (id != sehir.Id)
             {
                 return NotFound();
             }
@@ -94,12 +95,12 @@ namespace WebProje.Controllers
 
             try
             {
-                _context.Update(yol);
+                _context.Update(sehir);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!YolExists(yol.Id))
+                if (!SehirExists(sehir.Id))
                 {
                     return NotFound();
                 }
@@ -108,7 +109,7 @@ namespace WebProje.Controllers
                     throw;
                 }
             }
-            return RedirectToAction("YolEkle", "Admin");
+            return RedirectToAction("SehirEkle", "Admin");
         }
         public async Task<IActionResult> Delete(int? id)
         {
@@ -119,45 +120,46 @@ namespace WebProje.Controllers
             }
             else
             {
-                if (id == null || _context.Yollar == null)
+                if (id == null || _context.sehirler == null)
                 {
                     return NotFound();
                 }
 
-                var kitap = await _context.Yollar
+                var sehir = await _context.sehirler
                     .FirstOrDefaultAsync(m => m.Id == id);
-                if (kitap == null)
+                if (sehir == null)
                 {
                     return NotFound();
                 }
 
-                return View(kitap);
+                return View(sehir);
             }
         }
 
-        // POST: Kitap/Delete/5
+        // POST: sehir/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Yollar == null)
+            if (_context.sehirler == null)
             {
                 return Problem("Entity set 'KitaplikContext.Kitaplar'  is null.");
             }
-            var yoll = await _context.Yollar.FindAsync(id);
-            if (yoll != null)
+            var sehir = await _context.sehirler.FindAsync(id);
+            if (sehir != null)
             {
-                _context.Yollar.Remove(yoll);
+                _context.sehirler.Remove(sehir);
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction("YolEkle", "Admin");
+            return RedirectToAction("SehirEkle", "Admin");
         }
-        private bool YolExists(int id)
+        private bool SehirExists(int id)
         {
-            return (_context.Yollar?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.sehirler?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
-    
+
     }
 }
+

@@ -4,10 +4,10 @@ using WebProje.Models;
 
 namespace WebProje.Controllers
 {
-    public class YolController : Controller
+    public class HavalemaniController : Controller
     {
         private readonly DbContextUcus _context;
-        public YolController(DbContextUcus context)
+        public HavalemaniController(DbContextUcus context)
         {
             _context = context;
         }
@@ -29,12 +29,12 @@ namespace WebProje.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Yol yol)
+        public async Task<IActionResult> Create(Havalemani havalemani)
         {
 
-            _context.Add(yol);
+            _context.Add(havalemani);
             await _context.SaveChangesAsync();
-            return RedirectToAction("YolEkle", "Admin");
+            return RedirectToAction("HavalemaniEkle", "Admin");
 
         }
         public async Task<IActionResult> Details(int? id)
@@ -46,18 +46,18 @@ namespace WebProje.Controllers
             }
             else
             {
-                if (id == null || _context.Yollar == null)
+                if (id == null || _context.havalemaniler == null)
                 {
                     return NotFound();
                 }
 
-                var kitap = await _context.Yollar.FirstOrDefaultAsync(m => m.Id == id);
-                if (kitap == null)
+                var havalemani = await _context.havalemaniler.FirstOrDefaultAsync(m => m.Id == id);
+                if (havalemani == null)
                 {
                     return NotFound();
                 }
 
-                return View(kitap);
+                return View(havalemani);
             }
         }
         public async Task<IActionResult> Edit(int? id)
@@ -69,24 +69,24 @@ namespace WebProje.Controllers
             }
             else
             {
-                if (id == null || _context.Yollar == null)
+                if (id == null || _context.havalemaniler == null)
                 {
                     return NotFound();
                 }
 
-                var kitap = await _context.Yollar.FindAsync(id);
-                if (kitap == null)
+                var havalemani = await _context.havalemaniler.FindAsync(id);
+                if (havalemani == null)
                 {
                     return NotFound();
                 }
-                return View(kitap);
+                return View(havalemani);
             }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Yol yol)
+        public async Task<IActionResult> Edit(int id, Havalemani havalemani)
         {
-            if (id != yol.Id)
+            if (id != havalemani.Id)
             {
                 return NotFound();
             }
@@ -94,12 +94,12 @@ namespace WebProje.Controllers
 
             try
             {
-                _context.Update(yol);
+                _context.Update(havalemani);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!YolExists(yol.Id))
+                if (!HavalemaniExists(havalemani.Id))
                 {
                     return NotFound();
                 }
@@ -108,7 +108,7 @@ namespace WebProje.Controllers
                     throw;
                 }
             }
-            return RedirectToAction("YolEkle", "Admin");
+            return RedirectToAction("HavalemaniEkle", "Admin");
         }
         public async Task<IActionResult> Delete(int? id)
         {
@@ -119,45 +119,46 @@ namespace WebProje.Controllers
             }
             else
             {
-                if (id == null || _context.Yollar == null)
+                if (id == null || _context.havalemaniler == null)
                 {
                     return NotFound();
                 }
 
-                var kitap = await _context.Yollar
+                var havalemani = await _context.havalemaniler
                     .FirstOrDefaultAsync(m => m.Id == id);
-                if (kitap == null)
+                if (havalemani == null)
                 {
                     return NotFound();
                 }
 
-                return View(kitap);
+                return View(havalemani);
             }
         }
 
-        // POST: Kitap/Delete/5
+        // POST: sehir/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Yollar == null)
+            if (_context.havalemaniler == null)
             {
-                return Problem("Entity set 'KitaplikContext.Kitaplar'  is null.");
+                return Problem("Entity set 'havalemaniContext.havalemaniler'  is null.");
             }
-            var yoll = await _context.Yollar.FindAsync(id);
-            if (yoll != null)
+            var havalemani = await _context.havalemaniler.FindAsync(id);
+            if (havalemani != null)
             {
-                _context.Yollar.Remove(yoll);
+                _context.havalemaniler.Remove(havalemani);
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction("YolEkle", "Admin");
+            return RedirectToAction("HavalemaniEkle", "Admin");
         }
-        private bool YolExists(int id)
+        private bool HavalemaniExists(int id)
         {
-            return (_context.Yollar?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.havalemaniler?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
-    
+
     }
 }
+

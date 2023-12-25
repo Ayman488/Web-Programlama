@@ -21,11 +21,27 @@
         <div class="form-group">
             <label for="YolEkle">Yol</label>
         </div>
-        <button type="submit" class="btn btn-success btn-block">Ucus Sayfasi</button>
+        <button type="submit" class="btn btn-success btn-block">Yol Sayfasi</button>
     </form>
 </div>
-
-
+<div class="card-body">
+    <h2 class="text-center mb-4">Sehir</h2>
+    <form asp-action="SehirEkle" asp-controller="Admin" method="post">
+        <div class="form-group">
+            <label for="SehirEkle">Sehir</label>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Sehir Sayfasi</button>
+    </form>
+</div>
+<div class="card-body">
+    <h2 class="text-center mb-4">Havalemani</h2>
+    <form asp-action="HavalemaniEkle" asp-controller="Admin" method="post">
+        <div class="form-group">
+            <label for="HavalemaniEkle">Havalemani</label>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Havalemani Sayfasi</button>
+    </form>
+</div>
 
 @section Scripts {
     @{

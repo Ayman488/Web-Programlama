@@ -21,8 +21,9 @@ namespace WebProje.Controllers
         }
         public IActionResult AdminSayfasi()
         {
-            return View();
-
+           
+                return View();
+            
         }
         public IActionResult UcusEkle(Ucak ucak)
         {
