@@ -16,17 +16,22 @@ namespace WebProje.Controllers
             return View();
         }
         // Koltuk rezervasyon süreci
-        public IActionResult RezerveKoltuk(int YolId, int KoltukNumarasi)
+        public IActionResult Rezervesyon(Rezervasyon rezervasyon)
         {
-            
-            return RedirectToAction("Index");
+            _context.Rezervasyonlar?.Any(e => e.Yol == rezervasyon.Yol).GetValueOrDefault("Login");
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
 
         // Rezervasyon onay sayfasını görüntüleyin
-        public IActionResult RezervasyonOnayla(int reservationId)
+        public IActionResult RezervasyonOnayla(int reservasyon)
         {
-        
+
             return View();
         }
 
@@ -34,7 +39,7 @@ namespace WebProje.Controllers
         // ödeme süreci
         public IActionResult OdemeYap(int reservationId)
         {
-        
+
 
             return RedirectToAction("Index");
         }
@@ -42,50 +47,58 @@ namespace WebProje.Controllers
         {
             return View();
         }
-        public interface IUserRepository
-        {
-            YeniKullanci GetUserByEmail(string email);
-        }
-        public class UserRepository : IUserRepository
-        {
-            private readonly DbContextUcus _context;
+        //public interface IUserRepository
+        //{
+        //    YeniKullanci GetUserByEmail(string email);
+        //}
+        //public class UserRepository : IUserRepository
+        //{
+        //    private readonly DbContextUcus _context;
 
-            public UserRepository(DbContextUcus context)
-            {
-                _context = context;
-            }
+        //    public UserRepository(DbContextUcus context)
+        //    {
+        //        _context = context;
+        //    }
 
-            public YeniKullanci GetUserByEmail(string email)
-            {
-                return _context.yeniKullancis.FirstOrDefault(u => u.Email == email);
-            }
-        }
+        //    public YeniKullanci GetUserByEmail(string email)
+        //    {
+        //        return _context.yeniKullancis.FirstOrDefault(u => u.Email == email);
+        //    }
+        //}
         [HttpPost]
         public IActionResult Login(Login login)
         {
-            const string adminEmail = "admin@example.com";
-            const string adminPassword = "adminPassword";
-            // قم بتنفيذ عمليات تسجيل الدخول هنا
-            // ...
+
 
             if (login.Email == "G201210591@Sakarya.edu.tr" && login.Sifre == "sau")
             {
+
                 HttpContext.Session.SetString("SessionUser", login.Email);
                 var cokOpt = new CookieOptions
                 {
                     Expires = DateTime.Now.AddMinutes(10)
                 };
-                // تسجيل الدخول ناجح
-                // ربما تقوم بتعيين جلسة للمستخدم أو تقوم بأية إجراءات إضافية
                 return RedirectToAction("AdminSayfasi", "Admin");
             }
-            else if((_context.yeniKullancis?.Any(e => e.Email == login.Email)).GetValueOrDefault())
+            else if ((_context.yeniKullancis?.Any(e => e.Email == login.Email)).GetValueOrDefault())
             {
-                return View("AnaSayfaYolSecme");
+                return View("Rezervesyon");
             }
             else
                 return View();
         }
-        
+        public IActionResult Kullanci()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Kullanci(YeniKullanci Kullanci)
+        {
+            _context.Add(Kullanci);
+            await _context.SaveChangesAsync();
+            return View("Rezervesyon");
+        }
+
     }
 }

@@ -1,0 +1,48 @@
+﻿@model WebProje.Models.Rezervasyon
+
+@{
+    ViewData["Title"] = "Rezervesyon";
+}
+
+<h1>Rezervesyon</h1>
+
+<h4>Rezervasyon</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Rezervesyon">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KoltukNumarasi" class="control-label"></label>
+                <input asp-for="KoltukNumarasi" class="form-control" />
+                <span asp-validation-for="KoltukNumarasi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ucak" class="control-label"></label>
+                <input asp-for="Ucak" class="form-control" />
+                <span asp-validation-for="Ucak" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yol" class="control-label"></label>
+                <input asp-for="Yol" class="form-control" />
+                <span asp-validation-for="Yol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YolcuAdi" class="control-label"></label>
+                <input asp-for="YolcuAdi" class="form-control" />
+                <span asp-validation-for="YolcuAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

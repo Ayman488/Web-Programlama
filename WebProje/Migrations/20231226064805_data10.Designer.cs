@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebProje.Models;
@@ -11,9 +12,11 @@ using WebProje.Models;
 namespace WebProje.Migrations
 {
     [DbContext(typeof(DbContextUcus))]
-    partial class DbContextUcusModelSnapshot : ModelSnapshot
+    [Migration("20231226064805_data10")]
+    partial class data10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,7 +48,7 @@ namespace WebProje.Migrations
 
                     b.HasIndex("SehirId");
 
-                    b.ToTable("havalemaniler", (string)null);
+                    b.ToTable("havalemaniler");
                 });
 
             modelBuilder.Entity("WebProje.Models.Login", b =>
@@ -59,7 +62,7 @@ namespace WebProje.Migrations
 
                     b.HasKey("Email");
 
-                    b.ToTable("Login", (string)null);
+                    b.ToTable("Login");
                 });
 
             modelBuilder.Entity("WebProje.Models.Rezervasyon", b =>
@@ -93,7 +96,7 @@ namespace WebProje.Migrations
 
                     b.HasIndex("YolcuAdiId");
 
-                    b.ToTable("Rezervasyonlar", (string)null);
+                    b.ToTable("Rezervasyonlar");
                 });
 
             modelBuilder.Entity("WebProje.Models.Sehir", b =>
@@ -110,7 +113,7 @@ namespace WebProje.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("sehirler", (string)null);
+                    b.ToTable("sehirler");
                 });
 
             modelBuilder.Entity("WebProje.Models.Ucak", b =>
@@ -126,7 +129,7 @@ namespace WebProje.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ucaklar", (string)null);
+                    b.ToTable("Ucaklar");
                 });
 
             modelBuilder.Entity("WebProje.Models.YeniKullanci", b =>
@@ -155,7 +158,7 @@ namespace WebProje.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("yeniKullancis", (string)null);
+                    b.ToTable("yeniKullancis");
                 });
 
             modelBuilder.Entity("WebProje.Models.Yol", b =>
@@ -183,7 +186,7 @@ namespace WebProje.Migrations
 
                     b.HasIndex("KalkisSehirId");
 
-                    b.ToTable("Yollar", (string)null);
+                    b.ToTable("Yollar");
                 });
 
             modelBuilder.Entity("WebProje.Models.Havalemani", b =>

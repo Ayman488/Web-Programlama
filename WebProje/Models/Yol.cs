@@ -8,6 +8,7 @@ namespace WebProje.Models
         public int Id { get; set; }
         [Required]
         public string KalkisSehir { get; set; }
+
         [Required]
         public string VarisSehri { get; set; }
         private DateTime _kalkisZaman;

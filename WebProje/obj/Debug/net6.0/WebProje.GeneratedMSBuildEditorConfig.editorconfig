@@ -104,6 +104,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xBbmFTYXlmYVlvbFNlY21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucus/Kullanci.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xLdWxsYW5jaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucus/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -118,6 +122,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucus/RezerveKoltuk.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xSZXplcnZlS29sdHVrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Ucus/Rezervesyon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xSZXplcnZlc3lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/dounlodes/Web-Programlama-main (1)/Web-Programlama-main/WebProje/Views/Yol/Create.cshtml]
