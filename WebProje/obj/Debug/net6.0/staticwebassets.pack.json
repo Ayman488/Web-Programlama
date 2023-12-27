@@ -1,139 +1,139 @@
 {
   "Files": [
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebProje.bundle.scp.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebProje.bundle.scp.css",
       "PackagePath": "staticwebassets\\WebProje.bundle.scp.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\css\\site.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\favicon.ico",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\js\\site.js",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {

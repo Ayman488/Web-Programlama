@@ -6,9 +6,9 @@ namespace WebProje.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        public ICollection<Havalemani> havalemaniler { get; set; }
+        public List<Havalemani> havalemaniler { get; set; } = new List<Havalemani>();
+
 
     }
 }

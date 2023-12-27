@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebProje.Models
 {
@@ -6,13 +7,24 @@ namespace WebProje.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         public int KoltukNumarasi { get; set; }
-        [Required]
-        public Yol Yol { get; set; }
-        [Required]
+
+
+
+        [ForeignKey("ID")]
+        public int SYolID { get; set; }
+        public Yol ID { get; set; }
+
+
+
+        [ForeignKey("ucak")]
         public int Ucak { get; set; }
-        [Required]
-        public YeniKullanci YolcuAdi { get; set; }
+        public Ucak ucak { get; set; }
+
+
+
+        [ForeignKey("YolcuId")]
+        public int YolcuID { get; set; }
+        public YeniKullanci YolcuId { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebProje.Models;
@@ -11,9 +12,11 @@ using WebProje.Models;
 namespace WebProje.Migrations
 {
     [DbContext(typeof(DbContextUcus))]
-    partial class DbContextUcusModelSnapshot : ModelSnapshot
+    [Migration("20231227184925_new")]
+    partial class @new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,6 +69,9 @@ namespace WebProje.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Id1")
+                        .HasColumnType("integer");
+
                     b.Property<int>("KoltukNumarasi")
                         .HasColumnType("integer");
 
@@ -80,7 +86,7 @@ namespace WebProje.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SYolID");
+                    b.HasIndex("Id1");
 
                     b.HasIndex("Ucak");
 
@@ -193,7 +199,7 @@ namespace WebProje.Migrations
                 {
                     b.HasOne("WebProje.Models.Yol", "ID")
                         .WithMany("rezervasyonlar")
-                        .HasForeignKey("SYolID")
+                        .HasForeignKey("Id1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\WebProje.csproj": {}
+    "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\WebProje.csproj": {}
   },
   "projects": {
-    "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\WebProje.csproj": {
+    "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\WebProje.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\WebProje.csproj",
+        "projectUniqueName": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\WebProje.csproj",
         "projectName": "WebProje",
-        "projectPath": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\WebProje.csproj",
+        "projectPath": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\WebProje.csproj",
         "packagesPath": "C:\\Users\\97150\\.nuget\\packages\\",
-        "outputPath": "D:\\dounlodes\\Web-Programlama-main (1)\\Web-Programlama-main\\WebProje\\obj\\",
+        "outputPath": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\97150\\AppData\\Roaming\\NuGet\\NuGet.Config",

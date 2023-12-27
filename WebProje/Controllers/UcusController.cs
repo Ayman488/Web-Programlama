@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing;
 using WebProje.Models;
 
 namespace WebProje.Controllers
@@ -16,20 +18,38 @@ namespace WebProje.Controllers
             return View();
         }
         // Koltuk rezervasyon süreci
+        public IActionResult Rezervesyon()
+        {
+            ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id");
+
+        
+            ViewData["YolId"] = new SelectList(_context.Yollar, "KalkisSehir", "VarisSehir");
+            return View();
+        }
+
+        // POST: Rezervesyon/Create
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Rezervesyon(Rezervasyon rezervasyon)
         {
-            _context.Rezervasyonlar?.Any(e => e.Yol == rezervasyon.Yol).GetValueOrDefault("Login");
-                return RedirectToAction("Login");
-            }
-            else
+            
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index");
+                _context.Add(rezervasyon);
+                _context.SaveChangesAsync();
+                return RedirectToAction(nameof(RezervasyonOnayla));
+
             }
+            ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id", "KoltukSayisi", rezervasyon.ucak);
+            ViewData["YolId"] = new SelectList(_context.Yollar, "KalkisSehir", "VarisSehir", rezervasyon.SYolID);
+            return View(rezervasyon);
+
         }
 
 
         // Rezervasyon onay sayfasını görüntüleyin
-        public IActionResult RezervasyonOnayla(int reservasyon)
+        public IActionResult RezervasyonOnayla(int reservationId)
         {
 
             return View();

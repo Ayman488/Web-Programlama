@@ -6,8 +6,7 @@ namespace WebProje.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         public int KoltukSayisi { get; set; }
-        public ICollection<Rezervasyon> Rezervasyons { get; set; }
+        public List<Rezervasyon> rezervasyonlar { get; set; } = new List<Rezervasyon>();
     }
 }

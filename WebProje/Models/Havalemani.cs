@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebProje.Models
 {
@@ -6,10 +7,12 @@ namespace WebProje.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         public string HavalemanininAdi { get; set; }
-        [Required]
-        public string Sehir { get; set; }
-        
+
+
+        [ForeignKey("sehir")]
+        public int SehirId { get; set; }
+        public Sehir sehir { get; set; }
+
     }
 }
