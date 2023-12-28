@@ -11256,19 +11256,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\97150\\.nuget\\packages\\": {}
+    "C:\\Users\\mgrm3\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\WebProje.csproj",
+      "projectUniqueName": "C:\\Users\\mgrm3\\Desktop\\Web-Programlama\\WebProje\\WebProje.csproj",
       "projectName": "WebProje",
-      "projectPath": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\WebProje.csproj",
-      "packagesPath": "C:\\Users\\97150\\.nuget\\packages\\",
-      "outputPath": "D:\\dounlodes\\Web-Programlama\\Web-Programlama-main\\WebProje\\obj\\",
+      "projectPath": "C:\\Users\\mgrm3\\Desktop\\Web-Programlama\\WebProje\\WebProje.csproj",
+      "packagesPath": "C:\\Users\\mgrm3\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mgrm3\\Desktop\\Web-Programlama\\WebProje\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\97150\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mgrm3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11276,6 +11281,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

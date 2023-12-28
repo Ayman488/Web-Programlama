@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebProje.Models;
@@ -11,9 +12,11 @@ using WebProje.Models;
 namespace WebProje.Migrations
 {
     [DbContext(typeof(DbContextUcus))]
-    partial class DbContextUcusModelSnapshot : ModelSnapshot
+    [Migration("20231228200548_data12")]
+    partial class data12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

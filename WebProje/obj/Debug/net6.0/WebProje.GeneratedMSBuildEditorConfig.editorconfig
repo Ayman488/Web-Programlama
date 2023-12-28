@@ -9,149 +9,153 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebProje
 build_property.RootNamespace = WebProje
-build_property.ProjectDir = D:\dounlodes\Web-Programlama\Web-Programlama-main\WebProje\
+build_property.ProjectDir = C:\Users\mgrm3\Desktop\Web-Programlama\WebProje\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\dounlodes\Web-Programlama\Web-Programlama-main\WebProje
+build_property.MSBuildProjectDirectory = C:\Users\mgrm3\Desktop\Web-Programlama\WebProje
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Admin/AdminSayfasi.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Admin/AdminSayfasi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5TYXlmYXNpLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Admin/HavalemaniEkle.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Admin/HavalemaniEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSGF2YWxlbWFuaUVrbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Admin/SehirEkle.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Admin/SehirEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2VoaXJFa2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Admin/UcusEkle.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Admin/UcusEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVWN1c0VrbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Admin/YolEkle.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Admin/YolEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cWW9sRWtsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Havalemani/Create.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Havalemani/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YWxlbWFuaVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Havalemani/Delete.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Havalemani/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YWxlbWFuaVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Havalemani/Details.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Havalemani/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YWxlbWFuaVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Havalemani/Edit.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Havalemani/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGF2YWxlbWFuaVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Home/Index.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Home/Privacy.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Sehir/Create.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Sehir/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VoaXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Sehir/Delete.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Sehir/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VoaXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Sehir/Details.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Sehir/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VoaXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Sehir/Edit.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Sehir/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VoaXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Shared/Error.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucak/Create.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucak/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucak/Delete.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucak/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucak/Details.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucak/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucak/Edit.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucak/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucus/AnaSayfaYolSecme.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucus/AnaSayfaYolSecme.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xBbmFTYXlmYVlvbFNlY21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucus/Kullanci.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucus/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucus/Kullanci.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xLdWxsYW5jaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucus/Login.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucus/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucus/OdemeYap.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucus/OdemeYap.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xPZGVtZVlhcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucus/RezervasyonOnayla.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucus/RezervasyonOnayla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xSZXplcnZhc3lvbk9uYXlsYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucus/RezerveKoltuk.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucus/RezerveKoltuk.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xSZXplcnZlS29sdHVrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Ucus/Rezervesyon.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucus/Rezervesyon.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWN1c1xSZXplcnZlc3lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Yol/Create.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Yol/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9sXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Yol/Delete.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Yol/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9sXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Yol/Details.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Yol/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9sXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Yol/Edit.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Yol/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWW9sXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/_ViewImports.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/_ViewStart.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/dounlodes/Web-Programlama/Web-Programlama-main/WebProje/Views/Shared/_Layout.cshtml]
+[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-wp3nozgae1

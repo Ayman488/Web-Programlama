@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebProje.Models;
@@ -11,9 +12,11 @@ using WebProje.Models;
 namespace WebProje.Migrations
 {
     [DbContext(typeof(DbContextUcus))]
-    partial class DbContextUcusModelSnapshot : ModelSnapshot
+    [Migration("20231227202139_new2")]
+    partial class new2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -191,29 +194,29 @@ namespace WebProje.Migrations
 
             modelBuilder.Entity("WebProje.Models.Rezervasyon", b =>
                 {
-                    b.HasOne("WebProje.Models.Yol", "Yol")
+                    b.HasOne("WebProje.Models.Yol", "ID")
                         .WithMany("rezervasyonlar")
                         .HasForeignKey("SYolID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebProje.Models.Ucak", "UcakNavigation")
+                    b.HasOne("WebProje.Models.Ucak", "ucak")
                         .WithMany("rezervasyonlar")
                         .HasForeignKey("Ucak")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebProje.Models.YeniKullanci", "Yolcu")
+                    b.HasOne("WebProje.Models.YeniKullanci", "YolcuId")
                         .WithMany("rezervasyonlar")
                         .HasForeignKey("YolcuID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("UcakNavigation");
+                    b.Navigation("ID");
 
-                    b.Navigation("Yol");
+                    b.Navigation("YolcuId");
 
-                    b.Navigation("Yolcu");
+                    b.Navigation("ucak");
                 });
 
             modelBuilder.Entity("WebProje.Models.Sehir", b =>

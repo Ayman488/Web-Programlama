@@ -11,20 +11,20 @@ namespace WebProje.Models
 
 
 
-        [ForeignKey("ID")]
+        [ForeignKey("Yol")]
         public int SYolID { get; set; }
-        public Yol ID { get; set; }
+        public Yol Yol { get; set; }
 
 
 
-        [ForeignKey("ucak")]
+        [ForeignKey("UcakNavigation")]
         public int Ucak { get; set; }
-        public Ucak ucak { get; set; }
+        public Ucak UcakNavigation { get; set; }
 
 
 
-        [ForeignKey("YolcuId")]
+        [ForeignKey("Yolcu")]
         public int YolcuID { get; set; }
-        public YeniKullanci YolcuId { get; set; }
+        public YeniKullanci Yolcu { get; set; }
     }
 }

@@ -2,7 +2,12 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using WebProje.Models;
+
 
 namespace WebProje.Controllers
 {
@@ -20,9 +25,8 @@ namespace WebProje.Controllers
         // Koltuk rezervasyon süreci
         public IActionResult Rezervesyon()
         {
-            ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id");
+            ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id","Id");
 
-        
             ViewData["YolId"] = new SelectList(_context.Yollar, "KalkisSehir", "VarisSehir");
             return View();
         }
@@ -31,18 +35,18 @@ namespace WebProje.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Rezervesyon(Rezervasyon rezervasyon)
+        public async Task<IActionResult>Rezervasyon(Rezervasyon rezervasyon)
         {
             
             if (ModelState.IsValid)
             {
                 _context.Add(rezervasyon);
-                _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(RezervasyonOnayla));
 
             }
-            ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id", "KoltukSayisi", rezervasyon.ucak);
-            ViewData["YolId"] = new SelectList(_context.Yollar, "KalkisSehir", "VarisSehir", rezervasyon.SYolID);
+            ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id", "Id", rezervasyon.UcakNavigation);
+            ViewData["YolId"] = new SelectList(_context.Yollar, "KalkisSehir", "VarisSehir", rezervasyon.Yol);
             return View(rezervasyon);
 
         }
@@ -54,7 +58,7 @@ namespace WebProje.Controllers
 
             return View();
         }
-
+       
 
         // ödeme süreci
         public IActionResult OdemeYap(int reservationId)
@@ -100,9 +104,9 @@ namespace WebProje.Controllers
                 };
                 return RedirectToAction("AdminSayfasi", "Admin");
             }
-            else if ((_context.yeniKullancis?.Any(e => e.Email == login.Email)).GetValueOrDefault())
+            else if ((_context.yeniKullancis?.Any(e => e.Email == login.Email)).GetValueOrDefault()&& (_context.yeniKullancis?.Any(e => e.Sifre == login.Sifre)).GetValueOrDefault())
             {
-                return View("Rezervesyon");
+                return View("Index");
             }
             else
                 return View();
