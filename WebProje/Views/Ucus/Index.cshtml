@@ -4,8 +4,10 @@
 }
 <p>
 
-    <a asp-action="Rezervesyon">Create New</a>
+    <a asp-action="Rezervasyon">Create New</a>
 </p>
+
+<h1>Display</h1>
 
 <div>
     <h4>Rezervasyon</h4>
@@ -24,10 +26,10 @@
             @Html.DisplayFor(model => model.Yol.Id)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ucak)
+            @Html.DisplayNameFor(model => model.UcakNavigation)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Ucak)
+            @Html.DisplayFor(model => model.UcakNavigation.Id)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Yolcu)
@@ -36,4 +38,8 @@
             @Html.DisplayFor(model => model.Yolcu.Email)
         </dd>
     </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>

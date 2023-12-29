@@ -20,35 +20,67 @@ namespace WebProje.Controllers
         }
         public IActionResult Index()
         {
+
             return View();
         }
-        // Koltuk rezervasyon süreci
-        public IActionResult Rezervesyon()
+        [HttpGet("Ucus/Index/{id}")]
+        public async Task<IActionResult> Index(int? id)
         {
-            ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id","Id");
 
-            ViewData["YolId"] = new SelectList(_context.Yollar, "KalkisSehir", "VarisSehir");
+            if (HttpContext.Session.GetString("SessionUser") is null)
+            {
+                TempData["hata"] = "Lütfen Login olunuz";
+                return RedirectToAction("Login", "Ucus");
+            }
+            else
+            {
+                if (id == null || _context.Rezervasyonlar == null)
+                {
+                    return NotFound();
+                }
+
+                var rezervasyon = await _context.Rezervasyonlar
+                                        .Include(r => r.Yol)
+                                        .Include(r => r.UcakNavigation)
+                                        .Include(r => r.Yolcu)
+                                        .FirstOrDefaultAsync(m => m.Id == id);
+
+                if (rezervasyon == null)
+                {
+                    return NotFound();
+                }
+
+                return View(rezervasyon);
+            }
+        }
+        // Koltuk rezervasyon süreci
+        public IActionResult Rezervasyon()
+        {
+            
+            ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id","Id");
+            ViewBag.YolId = new SelectList(_context.Yollar, "Id", "Id");
             return View();
         }
 
         // POST: Rezervesyon/Create
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult>Rezervasyon(Rezervasyon rezervasyon)
+        public async Task<IActionResult> Rezervasyon(Rezervasyon rezervasyon)
         {
-            
+
             if (ModelState.IsValid)
             {
-                _context.Add(rezervasyon);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(RezervasyonOnayla));
 
             }
-            ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id", "Id", rezervasyon.UcakNavigation);
-            ViewData["YolId"] = new SelectList(_context.Yollar, "KalkisSehir", "VarisSehir", rezervasyon.Yol);
-            return View(rezervasyon);
+            //_context.Add(rezervasyon);
+            //await _context.SaveChangesAsync();
+            //return RedirectToAction(nameof(RezervasyonOnayla), new { reservationId = rezervasyon.Id });
+                
+       
 
+            ViewBag.UcakID = new SelectList(_context.Ucaklar, "Id", "Id", rezervasyon.Ucak);
+            ViewBag.YolId = new SelectList(_context.Yollar, "Id", "Id", rezervasyon.SYolID);
+            return View(rezervasyon);
         }
 
 
