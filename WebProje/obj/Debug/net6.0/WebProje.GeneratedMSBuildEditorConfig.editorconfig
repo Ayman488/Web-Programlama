@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebProje
 build_property.RootNamespace = WebProje
 build_property.ProjectDir = C:\Users\mgrm3\Desktop\Web-Programlama\WebProje\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -86,18 +88,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucak/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucak/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucak/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucak/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWNha1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mgrm3/Desktop/Web-Programlama/WebProje/Views/Ucus/AnaSayfaYolSecme.cshtml]

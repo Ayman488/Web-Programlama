@@ -27,7 +27,6 @@ namespace WebProje.Controllers
         }
         public IActionResult UcusEkle(Ucak ucak)
         {
-
             if (HttpContext.Session.GetString("SessionUser") is null)
             {
                 TempData["hata"] = "Lütfen Login olunuz";
@@ -35,11 +34,18 @@ namespace WebProje.Controllers
             }
             else
             {
+                
+                
+                
+         
+                
+
                 var Ucak1 = _context.Ucaklar.ToList();
                 return View(Ucak1);
             }
         }
-
+    
+   
         public IActionResult YolEkle(Yol yol)
         {
             if (HttpContext.Session.GetString("SessionUser") is null)
@@ -78,6 +84,19 @@ namespace WebProje.Controllers
             {
                 var havalemani1 = _context.havalemaniler.ToList();
                 return View(havalemani1);
+            }
+        }
+        public IActionResult SirketEkle(Sirket Sirkets)
+        {
+            if (HttpContext.Session.GetString("SessionUser") is null)
+            {
+                TempData["hata"] = "Lütfen Login olunuz";
+                return RedirectToAction("Login", "Ucus");
+            }
+            else
+            {
+                var Sirkets1 = _context.sirketler.ToList();
+                return View(Sirkets1);
             }
         }
         public IActionResult UsrLogOut()

@@ -23,6 +23,10 @@
                 <span asp-validation-for="KoltukSayisi" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="sirketsId" class="control-label"></label>
+                <select asp-for="sirketsId" class="form-control" asp-items="ViewBag.SirketID"></select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -30,7 +34,7 @@
 </div>
 
 <div>
-    <a asp-controller="Admin" asp-action="UcusEkle">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

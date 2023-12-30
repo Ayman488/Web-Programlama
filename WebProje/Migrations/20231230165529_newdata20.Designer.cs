@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebProje.Models;
@@ -11,9 +12,11 @@ using WebProje.Models;
 namespace WebProje.Migrations
 {
     [DbContext(typeof(DbContextUcus))]
-    partial class DbContextUcusModelSnapshot : ModelSnapshot
+    [Migration("20231230165529_newdata20")]
+    partial class newdata20
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,27 +45,6 @@ namespace WebProje.Migrations
                     b.HasIndex("SehirId");
 
                     b.ToTable("havalemaniler");
-                });
-
-            modelBuilder.Entity("WebProje.Models.Koltuk", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsAvailable")
-                        .HasColumnType("boolean");
-
-                    b.Property<int>("UcakId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UcakId");
-
-                    b.ToTable("Koltuklar");
                 });
 
             modelBuilder.Entity("WebProje.Models.Login", b =>
@@ -127,23 +109,6 @@ namespace WebProje.Migrations
                     b.ToTable("sehirler");
                 });
 
-            modelBuilder.Entity("WebProje.Models.Sirket", b =>
-                {
-                    b.Property<int>("SirketId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SirketId"));
-
-                    b.Property<string>("SirketName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("SirketId");
-
-                    b.ToTable("sirketler");
-                });
-
             modelBuilder.Entity("WebProje.Models.Ucak", b =>
                 {
                     b.Property<int>("Id")
@@ -155,12 +120,7 @@ namespace WebProje.Migrations
                     b.Property<int>("KoltukSayisi")
                         .HasColumnType("integer");
 
-                    b.Property<int>("sirketsId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("sirketsId");
 
                     b.ToTable("Ucaklar");
                 });
@@ -232,17 +192,6 @@ namespace WebProje.Migrations
                     b.Navigation("sehir");
                 });
 
-            modelBuilder.Entity("WebProje.Models.Koltuk", b =>
-                {
-                    b.HasOne("WebProje.Models.Ucak", "ucaks1")
-                        .WithMany("Koltuklar")
-                        .HasForeignKey("UcakId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ucaks1");
-                });
-
             modelBuilder.Entity("WebProje.Models.Rezervasyon", b =>
                 {
                     b.HasOne("WebProje.Models.Yol", "Yol")
@@ -270,31 +219,13 @@ namespace WebProje.Migrations
                     b.Navigation("Yolcu");
                 });
 
-            modelBuilder.Entity("WebProje.Models.Ucak", b =>
-                {
-                    b.HasOne("WebProje.Models.Sirket", "sirkets")
-                        .WithMany("ucaklar")
-                        .HasForeignKey("sirketsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("sirkets");
-                });
-
             modelBuilder.Entity("WebProje.Models.Sehir", b =>
                 {
                     b.Navigation("havalemaniler");
                 });
 
-            modelBuilder.Entity("WebProje.Models.Sirket", b =>
-                {
-                    b.Navigation("ucaklar");
-                });
-
             modelBuilder.Entity("WebProje.Models.Ucak", b =>
                 {
-                    b.Navigation("Koltuklar");
-
                     b.Navigation("rezervasyonlar");
                 });
 

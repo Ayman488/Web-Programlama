@@ -62,7 +62,7 @@ namespace WebProje.Controllers
             return View();
         }
 
-        // POST: Rezervesyon/Create
+        // POST: Rezervasyon/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Rezervasyon(Rezervasyon rezervasyon)
@@ -136,12 +136,15 @@ namespace WebProje.Controllers
                 };
                 return RedirectToAction("AdminSayfasi", "Admin");
             }
-            else if ((_context.yeniKullancis?.Any(e => e.Email == login.Email)).GetValueOrDefault()&& (_context.yeniKullancis?.Any(e => e.Sifre == login.Sifre)).GetValueOrDefault())
+            else if (_context.yeniKullancis.Any(e => e.Email == login.Email && e.Sifre == login.Sifre))
             {
                 return View("Index");
             }
             else
+            {
+                TempData["error"] = "sifre veya email yanlis";
                 return View();
+            }
         }
         public IActionResult Kullanci()
         {
@@ -153,7 +156,7 @@ namespace WebProje.Controllers
         {
             _context.Add(Kullanci);
             await _context.SaveChangesAsync();
-            return View("Rezervesyon");
+            return View("Rezervasyon");
         }
 
     }

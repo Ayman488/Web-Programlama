@@ -835,3 +835,4 @@ C:\Users\mgrm3\Desktop\Web-Programlama\WebProje\obj\Debug\net6.0\refint\WebProje
 C:\Users\mgrm3\Desktop\Web-Programlama\WebProje\obj\Debug\net6.0\WebProje.pdb
 C:\Users\mgrm3\Desktop\Web-Programlama\WebProje\obj\Debug\net6.0\WebProje.genruntimeconfig.cache
 C:\Users\mgrm3\Desktop\Web-Programlama\WebProje\obj\Debug\net6.0\ref\WebProje.dll
+C:\Users\mgrm3\Desktop\Web-Programlama\WebProje\obj\Debug\net6.0\WebProje.sourcelink.json

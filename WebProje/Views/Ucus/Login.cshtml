@@ -7,6 +7,15 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+@{
+    string error = TempData["error"] as string;
+}
+
+@if (!string.IsNullOrEmpty(error))
+{
+    <h2 class="alert-warning">@error</h2>
+}
+
 <body class="bg-light">
     <div class="container mt-5">
         <div class="row justify-content-center">

@@ -1,15 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Drawing;
 using WebProje.Models;
 
 namespace WebProje.Controllers
 {
-    public class UcakController : Controller
+    public class SirketController : Controller
     {
         private readonly DbContextUcus _context;
-        public UcakController(DbContextUcus context)
+        public SirketController(DbContextUcus context)
         {
             _context = context;
         }
@@ -26,38 +24,19 @@ namespace WebProje.Controllers
             }
             else
             {
-
-                ViewData["SirketID"] = new SelectList(_context.sirketler, "SirketId", "SirketName");
                 return View();
             }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( Ucak ucak)
+        public async Task<IActionResult> Create(Sirket sirket)
         {
 
-           
-                _context.Add(ucak);
-                await _context.SaveChangesAsync();
-                koltuklarEkle(ucak.Id, ucak.KoltukSayisi);
-                ViewData["SirketID"] = new SelectList(_context.sirketler, "SirketId", "SirketName");
-                return RedirectToAction("UcusEkle", "Admin");
 
-        }
-        private void koltuklarEkle(int ucakId, int koltuksayisi)
-        {
-            for (int i = 0; i < koltuksayisi; i++)
-            {
-                Koltuk yenikoltuk = new Koltuk
-                {
-                    UcakId = ucakId,
-                    IsAvailable = true
-                };
+            _context.Add(sirket);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("SirketEkle", "Admin");
 
-                _context.Koltuklar.Add(yenikoltuk);
-            }
-
-            _context.SaveChanges();
         }
         public async Task<IActionResult> Details(int? id)
         {
@@ -68,18 +47,18 @@ namespace WebProje.Controllers
             }
             else
             {
-                if (id == null || _context.Ucaklar == null)
+                if (id == null || _context.sirketler == null)
                 {
                     return NotFound();
                 }
 
-                var Ucak = await _context.Ucaklar.FirstOrDefaultAsync(m => m.Id == id);
-                if (Ucak == null)
+                var Sirket = await _context.sirketler.FirstOrDefaultAsync(m => m.SirketId == id);
+                if (Sirket == null)
                 {
                     return NotFound();
                 }
 
-                return View(Ucak);
+                return View(Sirket);
             }
         }
         public async Task<IActionResult> Edit(int? id)
@@ -91,46 +70,46 @@ namespace WebProje.Controllers
             }
             else
             {
-                if (id == null || _context.Ucaklar == null)
+                if (id == null || _context.sirketler == null)
                 {
                     return NotFound();
                 }
 
-                var Ucak = await _context.Ucaklar.FindAsync(id);
-                if (Ucak == null)
+                var Sirket = await _context.sirketler.FindAsync(id);
+                if (Sirket == null)
                 {
                     return NotFound();
                 }
-                return View(Ucak);
+                return View(Sirket);
             }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Ucak ucak)
+        public async Task<IActionResult> Edit(int id, Sirket sirket)
         {
-            if (id != ucak.Id)
+            if (id != sirket.SirketId)
             {
                 return NotFound();
             }
 
-            
-                try
+
+            try
+            {
+                _context.Update(sirket);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!SirketExists(sirket.SirketId))
                 {
-                    _context.Update(ucak);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!UcakExists(ucak.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
-            return RedirectToAction("UcusEkle", "Admin");
+            }
+            return RedirectToAction("SirketEkle", "Admin");
         }
         public async Task<IActionResult> Delete(int? id)
         {
@@ -141,19 +120,19 @@ namespace WebProje.Controllers
             }
             else
             {
-                if (id == null || _context.Ucaklar == null)
+                if (id == null || _context.sirketler == null)
                 {
                     return NotFound();
                 }
 
-                var Ucak = await _context.Ucaklar
-                    .FirstOrDefaultAsync(m => m.Id == id);
-                if (Ucak == null)
+                var Sirket = await _context.sirketler
+                    .FirstOrDefaultAsync(m => m.SirketId == id);
+                if (Sirket == null)
                 {
                     return NotFound();
                 }
 
-                return View(Ucak);
+                return View(Sirket);
             }
         }
 
@@ -163,24 +142,25 @@ namespace WebProje.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
 
-            if (_context.Ucaklar == null)
+            if (_context.sirketler == null)
             {
                 return Problem("Entity set 'KitaplikContext.Kitaplar'  is null.");
             }
-            var Ucak = await _context.Ucaklar.FindAsync(id);
-            if (Ucak != null)
+            var Sirket = await _context.sirketler.FindAsync(id);
+            if (Sirket != null)
             {
-                _context.Ucaklar.Remove(Ucak);
+                _context.sirketler.Remove(Sirket);
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction("UcusEkle", "Admin");
+            return RedirectToAction("SirketEkle", "Admin");
         }
-        private bool UcakExists(int id)
+        private bool SirketExists(int id)
         {
-            return (_context.Ucaklar?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.sirketler?.Any(e => e.SirketId == id)).GetValueOrDefault();
         }
 
     }
-    
+
 }
+

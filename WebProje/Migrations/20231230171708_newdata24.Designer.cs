@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebProje.Models;
@@ -11,9 +12,11 @@ using WebProje.Models;
 namespace WebProje.Migrations
 {
     [DbContext(typeof(DbContextUcus))]
-    partial class DbContextUcusModelSnapshot : ModelSnapshot
+    [Migration("20231230171708_newdata24")]
+    partial class newdata24
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,12 +58,7 @@ namespace WebProje.Migrations
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("boolean");
 
-                    b.Property<int>("UcakId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UcakId");
 
                     b.ToTable("Koltuklar");
                 });
@@ -232,17 +230,6 @@ namespace WebProje.Migrations
                     b.Navigation("sehir");
                 });
 
-            modelBuilder.Entity("WebProje.Models.Koltuk", b =>
-                {
-                    b.HasOne("WebProje.Models.Ucak", "ucaks1")
-                        .WithMany("Koltuklar")
-                        .HasForeignKey("UcakId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ucaks1");
-                });
-
             modelBuilder.Entity("WebProje.Models.Rezervasyon", b =>
                 {
                     b.HasOne("WebProje.Models.Yol", "Yol")
@@ -293,8 +280,6 @@ namespace WebProje.Migrations
 
             modelBuilder.Entity("WebProje.Models.Ucak", b =>
                 {
-                    b.Navigation("Koltuklar");
-
                     b.Navigation("rezervasyonlar");
                 });
 
