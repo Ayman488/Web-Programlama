@@ -189,6 +189,9 @@ namespace WebProje.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("adminmi")
+                        .HasColumnType("boolean");
+
                     b.HasKey("Id");
 
                     b.ToTable("yeniKullancis");

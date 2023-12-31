@@ -4,11 +4,19 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Login Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebProje</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
 </head>
 @{
     string error = TempData["error"] as string;
+   
 }
 
 @if (!string.IsNullOrEmpty(error))
@@ -16,31 +24,83 @@
     <h2 class="alert-warning">@error</h2>
 }
 
-<body class="bg-light">
-    <div class="container mt-5">
+<body>
+   @*  <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card">
+                <div class="card mt-5">
+                    <h2 class="card-header align-self-lg-center">Welcome to login</h2>
                     <div class="card-body">
-                        <h2 class="text-center mb-4">Login Page</h2>
                         <form asp-action="Login" asp-controller="Ucus" method="post">
-                            <div class="form-group">
-                                <label for="Email">Email:</label>
-                                <input asp-for="Email" type="text" class="form-control" id="Email" name="Email" required />
+                            <h3 class="text-center mb-4">Login</h3>
+                            <div class="mb-3">
+                                <label for="Email" class="form-label">Email:</label>
+                                <input asp-for="Email" type="email" class="form-control" id="Email" placeholder="isim@ornek.com" name="Email" required />
                             </div>
-                            <div class="form-group">
-                                <label for="Sifre">Şifre:</label>
-                                <input asp-for="Sifre" type="password" class="form-control" id="Sifre" name="Sifre" required />
+                            <div class="mb-3">
+                                <label for="Sifre" class="form-label">Şifre:</label>
+                                <input asp-for="Sifre" type="password" class="form-control" id="Sifre" placeholder="Şifre"  name="Sifre" required />
+                                
                             </div>
-                            <button type="submit" class="btn btn-success btn-block">Login</button>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Sign In</button>
+                            </div>
                         </form>
+                    </div>
+                    <div class="card mt-5">
+                        <p>Don't have an account?</p>  
+                        <a class="btn btn-outline-dark" asp-action="Kullanci">Yeni Hesap Oluştur</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        <a asp-action="Kullanci">Yeni Hesap Oluştur</a>
-    </div>
+    </div> *@
+    <div class="loginbody">
+        <div class="row justify-content-center">
+            <form asp-action="Login" asp-controller="Ucus" method="post" class="my-form">
+                <div class="login-welcome-row">
+                    <a href="#" title="Logo">
+                        <img src="~/img/4148273.png" />
+                    </a>
+                    <h1>Hoş Geldiniz &#x1F44F;</h1>
+                    <p>email ve şifrenizini giriniz</p>
+                </div>
+                <div class="input__wrapper">
+                    <input asp-for="Email" type="email" class="input__field" id="email" placeholder="isim@ornek.com" name="Email" required />
+                    <label for="email" class="input__label">Email:</label>
+                    <svg class="input__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                        <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
+                    </svg>
+                </div>
+                <div class="input__wrapper">
+           
+                    <input asp-for="Sifre" type="password" class="input__field" id="password" placeholder="Şifre" name="Sifre"  required />
+                    <label for="password" class="input__label">
+                        Password
+                    </label>
+                    <svg class="input__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+                        <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+                        <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+                    </svg>
+                </div>
+                <button type="submit" class="my-form__button">
+                    Login
+                </button>
+                <div class="my-form__actions">
+                    <div class="my-form__row">
+                        <span>Hesapın Yok Mu?</span>
+                        <a title="Create Account" asp-action="Kullanci">Yeni Hesap Oluştur</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+  </div>
+   
 </body>
-</html>
+@* </html>title="Minimum 6 characters at least 1 Alphabet and 1 Number" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" *@

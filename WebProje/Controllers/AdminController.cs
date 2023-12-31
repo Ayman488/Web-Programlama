@@ -21,8 +21,10 @@ namespace WebProje.Controllers
         }
         public IActionResult AdminSayfasi()
         {
-           
-                return View();
+            var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+            var layout = isAdmin ? "_AdminLayout" : "_Layout";
+            ViewBag.Layout = layout;
+            return View();
             
         }
         public IActionResult UcusEkle(Ucak ucak)

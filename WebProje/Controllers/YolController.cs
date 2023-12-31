@@ -51,13 +51,13 @@ namespace WebProje.Controllers
                     return NotFound();
                 }
 
-                var kitap = await _context.Yollar.FirstOrDefaultAsync(m => m.Id == id);
-                if (kitap == null)
+                var yol = await _context.Yollar.FirstOrDefaultAsync(m => m.Id == id);
+                if (yol == null)
                 {
                     return NotFound();
                 }
 
-                return View(kitap);
+                return View(yol);
             }
         }
         public async Task<IActionResult> Edit(int? id)
@@ -74,12 +74,12 @@ namespace WebProje.Controllers
                     return NotFound();
                 }
 
-                var kitap = await _context.Yollar.FindAsync(id);
-                if (kitap == null)
+                var yol = await _context.Yollar.FindAsync(id);
+                if (yol == null)
                 {
                     return NotFound();
                 }
-                return View(kitap);
+                return View(yol);
             }
         }
         [HttpPost]
@@ -124,14 +124,14 @@ namespace WebProje.Controllers
                     return NotFound();
                 }
 
-                var kitap = await _context.Yollar
+                var yol = await _context.Yollar
                     .FirstOrDefaultAsync(m => m.Id == id);
-                if (kitap == null)
+                if (yol == null)
                 {
                     return NotFound();
                 }
 
-                return View(kitap);
+                return View(yol);
             }
         }
 

@@ -11262,11 +11262,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mgrm3\\Desktop\\Web-Programlama\\WebProje\\WebProje.csproj",
+      "projectUniqueName": "C:\\Users\\mgrm3\\Desktop\\Files\\Web-Programlama\\WebProje\\WebProje.csproj",
       "projectName": "WebProje",
-      "projectPath": "C:\\Users\\mgrm3\\Desktop\\Web-Programlama\\WebProje\\WebProje.csproj",
+      "projectPath": "C:\\Users\\mgrm3\\Desktop\\Files\\Web-Programlama\\WebProje\\WebProje.csproj",
       "packagesPath": "C:\\Users\\mgrm3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mgrm3\\Desktop\\Web-Programlama\\WebProje\\obj\\",
+      "outputPath": "C:\\Users\\mgrm3\\Desktop\\Files\\Web-Programlama\\WebProje\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -5,7 +5,14 @@
 }
 
 <h1>Details</h1>
+@{
+    string error = TempData["hata"] as string;
+}
 
+@if (!string.IsNullOrEmpty(error))
+{
+    <h2 class="alert-warning">@error</h2>
+}
 <div>
     <h4>Havalemani</h4>
     <hr />

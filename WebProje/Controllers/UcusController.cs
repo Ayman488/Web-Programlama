@@ -20,8 +20,15 @@ namespace WebProje.Controllers
         }
         public IActionResult Index()
         {
+            if (HttpContext.Session.GetString("SessionUser") is null)
+            {
+                TempData["hata"] = "Lütfen Login olunuz";
+                return RedirectToAction("Login", "Ucus");
+            }
+            else { 
 
             return View();
+            }
         }
         [HttpGet("Ucus/Index/{id}")]
         public async Task<IActionResult> Index(int? id)
@@ -126,18 +133,21 @@ namespace WebProje.Controllers
         {
 
 
-            if (login.Email == "G201210591@Sakarya.edu.tr" && login.Sifre == "sau")
+            if (_context.yeniKullancis.Any(e => e.Email == login.Email && e.Sifre == login.Sifre&&e.adminmi==true))
             {
 
                 HttpContext.Session.SetString("SessionUser", login.Email);
+                HttpContext.Session.SetString("IsAdmin", "true");   
                 var cokOpt = new CookieOptions
                 {
                     Expires = DateTime.Now.AddMinutes(10)
                 };
+
                 return RedirectToAction("AdminSayfasi", "Admin");
             }
             else if (_context.yeniKullancis.Any(e => e.Email == login.Email && e.Sifre == login.Sifre))
             {
+                HttpContext.Session.SetString("SessionUser", login.Email);
                 return View("Index");
             }
             else
