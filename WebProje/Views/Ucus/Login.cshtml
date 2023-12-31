@@ -1,4 +1,5 @@
-﻿@model Login
+﻿@model WebProje.Models.Login
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,41 +26,12 @@
 }
 
 <body>
-   @*  <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card mt-5">
-                    <h2 class="card-header align-self-lg-center">Welcome to login</h2>
-                    <div class="card-body">
-                        <form asp-action="Login" asp-controller="Ucus" method="post">
-                            <h3 class="text-center mb-4">Login</h3>
-                            <div class="mb-3">
-                                <label for="Email" class="form-label">Email:</label>
-                                <input asp-for="Email" type="email" class="form-control" id="Email" placeholder="isim@ornek.com" name="Email" required />
-                            </div>
-                            <div class="mb-3">
-                                <label for="Sifre" class="form-label">Şifre:</label>
-                                <input asp-for="Sifre" type="password" class="form-control" id="Sifre" placeholder="Şifre"  name="Sifre" required />
-                                
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">Sign In</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="card mt-5">
-                        <p>Don't have an account?</p>  
-                        <a class="btn btn-outline-dark" asp-action="Kullanci">Yeni Hesap Oluştur</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> *@
+   
     <div class="loginbody">
         <div class="row justify-content-center">
             <form asp-action="Login" asp-controller="Ucus" method="post" class="my-form">
                 <div class="login-welcome-row">
-                    <a href="#" title="Logo">
+                    <a href="" title="Logo">
                         <img src="~/img/4148273.png" />
                     </a>
                     <h1>Hoş Geldiniz &#x1F44F;</h1>

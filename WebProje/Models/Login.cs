@@ -4,6 +4,7 @@ namespace WebProje.Models
 {
     public class Login
     {
+
         [Key]
         public string Email { get; set; }
         [Required(ErrorMessage = "şifre giminiz gerekiyor!")]

@@ -219,3 +219,26 @@ footer {
     gap: 8px;
     justify-content: space-between;
 }
+
+  .button-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .custom-btn {
+            border: none;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .btn-3 {
+            background-color: #08e8de;
+            color: black;
+        }
+
+        .btn-3:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,123,255,0.3);
+        }

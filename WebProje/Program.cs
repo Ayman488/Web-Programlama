@@ -30,10 +30,14 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Ucus}/{action=Login}/{id?}");
+app.MapControllerRoute(
+    name: "rezervasyon",
+    pattern: "{controller=Rezervasyon}/{action=Index}/{id?}");
 
 app.Run();

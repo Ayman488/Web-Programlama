@@ -1,17 +1,18 @@
 ﻿@model WebProje.Models.Rezervasyon
 
 @{
-    ViewData["Title"] = "Rezervesyon";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Rezervesyon</h1>
+<h1>Edit</h1>
 
 <h4>Rezervasyon</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Rezervasyon">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="KoltukNumarasi" class="control-label"></label>
                 <input asp-for="KoltukNumarasi" class="form-control" />
@@ -20,32 +21,29 @@
             <div class="form-group">
                 <label asp-for="SYolID" class="control-label"></label>
                 <select asp-for="SYolID" class="form-control" asp-items="ViewBag.YolId"></select>
-                <span asp-validation-for="SYolID" class="text-danger" ></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="YolcuID" class="control-label"></label>
-                <input asp-for="YolcuID" class="form-control" asp-items="" />
-                <span asp-validation-for="YolcuID" class="text-danger"></span>
+                <span asp-validation-for="SYolID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ucak" class="control-label"></label>
                 <select asp-for="Ucak" class="form-control" asp-items="ViewBag.UcakID"></select>
                 <span asp-validation-for="Ucak" class="text-danger"></span>
             </div>
-            
+            <div class="form-group" style="display:none;">
+                <label  asp-for="YolcuID" class="control-label"></label>
+                <select  asp-for="YolcuID" class="form-control" asp-items="ViewBag.YolcuId"></select>
+                <span asp-validation-for="YolcuID" class="text-danger"></span>
+            </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="List">Back to List</a>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

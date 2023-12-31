@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WebProje.Models.Rezervasyon>
+@{
+    ViewData["Title"] = "Rezervesyon";
+    string error = TempData["hata"] as string;
+
+    @if (!string.IsNullOrEmpty(error))
+    {
+        <h2 class="alert-warning">@error</h2>
+    }
+}
+
+<p>
+
+    <a asp-action="Create" asp-controller="Rezervasyon"><button class="custom-btn btn-3">Bilet Al</button></a>
+</p>
+
+
+<table class="table bg-light">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KoltukNumarasi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UcakNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yolcu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KoltukNumarasi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Yol.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UcakNavigation.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Yolcu.Email)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details"  asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            
+            <p>No reservations found.</p>
+        }
+    </tbody>
+</table>
