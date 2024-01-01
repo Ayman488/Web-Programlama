@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 navbar-color">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Uçuş bilet</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Ucus" asp-action="AnaSayfaYolSecme">Uçuş bilet</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,10 +24,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Ucus" asp-action="Index">Ana Sayfa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Ucus" asp-action="AnaSayfaYolSecme">Ana Sayfa</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Ucus" asp-action="Login">Login</a>
@@ -36,7 +33,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="UsrLogOut">Çıkış</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="UcakApi" asp-action="Get">Api Detailes</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="RezervasyonApi" asp-action="Get">Api Detailes</a>
                         </li>
                     </ul>
                 </div>

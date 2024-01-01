@@ -17,15 +17,16 @@ namespace WebProje.Controllers
         }
         public IActionResult List()
         {
-            string currentUserEmail = HttpContext.Session.GetString("SessionUser");
+            string UserEmail = HttpContext.Session.GetString("SessionUser");
 
 
             var rezervasyon = _context.Rezervasyonlar
-             .Include(r => r.Yol)
-             .Include(r => r.UcakNavigation)
-             .Include(r => r.Yolcu)
-             .Where(r => r.Yolcu.Email == currentUserEmail) // Filter by the current user's email
-             .ToList();//here i want to just show that data is equals to my email because now its showing othere users is rezervasyons
+                  .Include(r => r.Yol.KalkisSehir.KalkisYollar)
+                  .Include(r => r.Yol.VarisSehir.VarisYollar)
+                  .Include(r => r.UcakNavigation)
+                  .Include(r => r.Yolcu)
+                  .Where(r => r.Yolcu.Email == UserEmail)
+                  .ToList();
 
             return View(rezervasyon);
 
@@ -41,16 +42,16 @@ namespace WebProje.Controllers
             }
             else
             {
-                string currentUserEmail = HttpContext.Session.GetString("SessionUser");
+                string UserEmail = HttpContext.Session.GetString("SessionUser");
 
 
-                var rezervasyon = _context.Rezervasyonlar
-                 .Include(r => r.Yol)
-                 .Include(r => r.UcakNavigation)
-                 .Include(r => r.YolcuID)
-                 .Where(r => r.Yolcu.Email == currentUserEmail) // Filter by the current user's email
-                 .ToList();//here i want to just show that data is equals to my email because now its showing othere users is rezervasyons
-
+              var rezervasyon =  _context.Rezervasyonlar
+                    .Include(r=>r.Yol.KalkisSehir)
+                    .Include(r => r.Yol.VarisSehir)
+                    .Include(r => r.UcakNavigation)
+                    .Include(r => r.Yolcu)
+                    .Where(r => r.Yolcu.Email == UserEmail)
+                    .ToList();
 
                 return View(rezervasyon);
             }
@@ -64,23 +65,97 @@ namespace WebProje.Controllers
             }
             else
             {
-                ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id", "Id");
-                ViewBag.YolId = new SelectList(_context.Yollar, "Id", "Id");
+
+                ViewData["KalkisSehirId"] = new SelectList(_context.sehirler, "Id", "Name");
+                ViewData["VarisSehirId"] = new SelectList(_context.sehirler, "Id", "Name");
                 return View();
             }
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Rezervasyon rezervasyon)
+        public async Task<IActionResult> YolAra(int kalkisSehirId, int varisSehirId)
         {
+            var Yol = await _context.Yollar
+                               .Include(y => y.KalkisSehir)
+                               .Include(y => y.VarisSehir)
+                               .Where(y => y.KalkisSehirId == kalkisSehirId && y.VarisSehirId == varisSehirId)
+                               .ToListAsync();
+            if (!Yol.Any())
+            {
+                TempData["YolYok"] = "Yol Bulunmadı";
+                return RedirectToAction("Create"); 
+            }
+            return View("YolSec", Yol);
+        }
+        [HttpPost]
+        public async Task<IActionResult> KoltukSec(int yolId)
+        {
+        
+         
+                var Koltuklar = await _context.Koltuklar.Where(k=> k.IsAvailable).ToListAsync();
+            ViewBag.YolId = yolId;
+      
+            return View(Koltuklar);
+        }
 
 
-            _context.Add(rezervasyon);
+        [HttpPost]
+        public async Task<IActionResult> KoltukOnayala(int selectedSeatId, int yolId,int koltunkNumarasi)
+        {
+            // Retrieve the selected seat from the database
+            var seat = await _context.Koltuklar
+                                     .FirstOrDefaultAsync(k => k.Id == selectedSeatId && k.IsAvailable);
+
+            
+
+            // Retrieve the yol (Yol) and the current user
+            var yol = await _context.Yollar.FindAsync(yolId);
+
+            var currentUserEmail = HttpContext.Session.GetString("SessionUser");
+            var currentUser = await _context.yeniKullancis.FirstOrDefaultAsync(u => u.Email == currentUserEmail);
+
+            if (yol == null || currentUser == null)
+            {
+                // Handle the error appropriately
+                TempData["Error"] = "An error occurred while processing your request.";
+                return RedirectToAction("Create");
+            }
+
+            // Create a new reservation
+            var reservation = new Rezervasyon
+            {
+                KoltukNumarasi = seat.SeatNumber,
+                SYolID = yolId, // Assuming SYolID is your foreign key to Yol
+                YolcuID = currentUser.Id, // Set this to the current user's ID
+                Ucak = yol.UCAKID // Set this to the yol's UcakId
+            };
+
+            
+            seat.IsAvailable = false;
+
+         
+            _context.Add(reservation);
             await _context.SaveChangesAsync();
-            //ViewBag.UcakID = new SelectList(_context.Ucaklar, "Id", "Id", rezervasyon.Ucak);
-            //ViewBag.YolId = new SelectList(_context.Yollar, "Id", "Id", rezervasyon.SYolID);
-            return View("List");
 
+           
+            return RedirectToAction("KoltukOnayala1", new { id = reservation.Id });
+        }
+
+        public async Task<IActionResult> KoltukOnayala1(int id)
+        {
+            var reservation = await _context.Rezervasyonlar
+                                            .Include(r => r.Yol)
+                                            .ThenInclude(y => y.KalkisSehir)
+                                            .Include(r => r.Yol)
+                                            .ThenInclude(y => y.VarisSehir)
+                                            .FirstOrDefaultAsync(r => r.Id == id);
+
+            if (reservation == null)
+            {
+                // Handle the case where reservation is not found
+                return View("Error"); // You should have an Error view to handle such cases
+            }
+
+            return View(reservation);
         }
         public async Task<IActionResult> Details(int? id)
         {
@@ -97,7 +172,8 @@ namespace WebProje.Controllers
                 }
 
                 var rezervasyon = await _context.Rezervasyonlar
-                    .Include(r => r.Yol)
+                    .Include(r=>r.Yol.KalkisSehirId)
+                    .Include(r => r.Yol.VarisSehirId)
                     .Include(r => r.UcakNavigation)
                     .Include(r => r.Yolcu)
                     .FirstOrDefaultAsync(r => r.Id == id);
@@ -112,8 +188,8 @@ namespace WebProje.Controllers
         }
         public async Task<IActionResult> Edit(int? id)
         {
-            string currentUserEmail = HttpContext.Session.GetString("SessionUser");
-            if (string.IsNullOrEmpty(currentUserEmail))
+            string UserEmail = HttpContext.Session.GetString("SessionUser");
+            if (string.IsNullOrEmpty(UserEmail))
             {
                 TempData["hata"] = "Lütfen Login olunuz";
                 return RedirectToAction("Login", "Ucus");
@@ -121,18 +197,19 @@ namespace WebProje.Controllers
             var userId = HttpContext.Session.GetInt32("SessionUserId"); // Assuming you store user ID as an int
 
             var reservation = await _context.Rezervasyonlar
-                .Include(r => r.Yol)
-                .Include(r => r.UcakNavigation)
-                .Include(r => r.Yolcu)
-                .FirstOrDefaultAsync(r => r.Id == id && r.Yolcu.Email == currentUserEmail);
-
+                    .Include(r => r.Yol.KalkisSehirId)
+                    .Include(r => r.Yol.VarisSehirId)
+                    .Include(r => r.UcakNavigation)
+                    .Include(r => r.Yolcu)
+                    .FirstOrDefaultAsync(r => r.Id == id);
             if (reservation == null)
             {
                 return NotFound();
             }
 
             ViewData["UcakID"] = new SelectList(_context.Ucaklar, "Id", "Id", reservation.Ucak);
-            ViewData["YolId"] = new SelectList(_context.Yollar, "Id", "Id", reservation.SYolID);
+            ViewData["KalkisSehirId"] = new SelectList(_context.sehirler, "Id", "Name");
+            ViewData["VarisSehirId"] = new SelectList(_context.sehirler, "Id", "Name");
             ViewData["YolcuId"] = new SelectList(_context.yeniKullancis, "Id", "Id", reservation.YolcuID);
 
             return View(reservation);
@@ -150,8 +227,8 @@ namespace WebProje.Controllers
             }
 
             // Retrieve the current user's email from the session.
-            string currentUserEmail = HttpContext.Session.GetString("SessionUser");
-            if (string.IsNullOrEmpty(currentUserEmail))
+            string UserEmail = HttpContext.Session.GetString("SessionUser");
+            if (string.IsNullOrEmpty(UserEmail))
             {
                 TempData["hata"] = "Lütfen Login olunuz";
                 return RedirectToAction("Login", "Ucus");
@@ -164,7 +241,7 @@ namespace WebProje.Controllers
                 .FirstOrDefaultAsync(r => r.Id == id);
 
             // Check if the reservation exists and if it belongs to the logged-in user.
-            if (existingReservation == null || existingReservation.Yolcu.Email != currentUserEmail)
+            if (existingReservation == null || existingReservation.Yolcu.Email != UserEmail)
             {
                 return NotFound();
             }
@@ -206,10 +283,11 @@ namespace WebProje.Controllers
                 }
 
                 var rezervasyon = await _context.Rezervasyonlar
-                   .Include(r => r.Yol)
-                   .Include(r => r.UcakNavigation)
-                   .Include(r => r.Yolcu)
-                   .FirstOrDefaultAsync(m => m.Id == id);
+                     .Include(r => r.Yol.KalkisSehirId)
+                     .Include(r => r.Yol.VarisSehirId)
+                     .Include(r => r.UcakNavigation)
+                     .Include(r => r.Yolcu)
+                     .FirstOrDefaultAsync(r => r.Id == id);
                 if (rezervasyon == null)
                 {
                     return NotFound();
@@ -241,6 +319,8 @@ namespace WebProje.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("List");
         }
+
+   
         private bool rezervasyonExists(int id)
         {
             return (_context.Rezervasyonlar?.Any(e => e.Id == id)).GetValueOrDefault();

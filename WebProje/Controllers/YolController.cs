@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebProje.Models;
 
@@ -24,6 +25,16 @@ namespace WebProje.Controllers
             }
             else
             {
+                ViewData["KalkisSehirId"] = new SelectList(_context.sehirler, "Id", "Name");
+                ViewData["VarisSehirId"] = new SelectList(_context.sehirler, "Id", "Name");
+
+                var sirketler = _context.sirketler.Select(s => new { s.SirketId, s.SirketName }).ToList();
+                ViewBag.SirketList = new SelectList(sirketler, "SirketId", "SirketName");
+
+
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View();
             }
         }
@@ -51,12 +62,14 @@ namespace WebProje.Controllers
                     return NotFound();
                 }
 
-                var yol = await _context.Yollar.FirstOrDefaultAsync(m => m.Id == id);
+                var yol = await _context.Yollar.Include(m => m.KalkisSehir).Include(m => m.VarisSehir).Include(m => m.UCAK).ThenInclude(u => u.sirkets).FirstOrDefaultAsync(m => m.Id == id);
                 if (yol == null)
                 {
                     return NotFound();
                 }
-
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(yol);
             }
         }
@@ -79,6 +92,11 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
+                ViewData["KalkisSehirId"] = new SelectList(_context.sehirler, "Id", "Name");
+                ViewData["VarisSehirId"] = new SelectList(_context.sehirler, "Id", "Name");
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(yol);
             }
         }
@@ -130,7 +148,9 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
-
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(yol);
             }
         }

@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "SehirEkle";
+    Layout = ViewBag.Layout;
+
 }
 
 <h1>SehirEkle</h1>
@@ -9,14 +11,6 @@
 <p>
     <a asp-controller="Sehir" asp-action="Create">Create New</a>
 </p>
-@{
-    string error = TempData["hata"] as string;
-}
-
-@if (!string.IsNullOrEmpty(error))
-{
-    <h2 class="alert-warning">@error</h2>
-}
 <table class="table">
     <thead>
         <tr>
@@ -41,6 +35,3 @@
 }
     </tbody>
 </table>
-<div>
-    <a asp-action="AdminSayfasi">Back to List</a>
-</div>

@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "HavalemaniEkle";
+    Layout = ViewBag.Layout;
+
 }
 
 <h1>HavalemaniEkle</h1>
@@ -9,14 +11,6 @@
 <p>
     <a asp-controller="Havalemani" asp-action="Create">Create New</a>
 </p>
-@{
-    string error = TempData["hata"] as string;
-}
-
-@if (!string.IsNullOrEmpty(error))
-{
-    <h2 class="alert-warning">@error</h2>
-}
 <table class="table">
     <thead>
         <tr>
@@ -24,7 +18,7 @@
                 @Html.DisplayNameFor(model => model.HavalemanininAdi)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SehirId)
+                @Html.DisplayNameFor(model => model.Sehir)
             </th>
             <th></th>
         </tr>
@@ -36,17 +30,14 @@
                 @Html.DisplayFor(modelItem => item.HavalemanininAdi)
             </td>
             <td>
-                    @Html.DisplayFor(modelItem => item.SehirId)
+                @Html.DisplayFor(modelItem => item.Sehir.Name)
             </td>
             <td>
-                    <a asp-controller="Havalemani" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-controller="Havalemani" asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-controller="Havalemani" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-controller="Havalemani" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-controller="Havalemani" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-controller="Havalemani" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-<div>
-    <a asp-action="AdminSayfasi">Back to List</a>
-</div>

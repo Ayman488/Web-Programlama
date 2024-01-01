@@ -10,6 +10,10 @@ namespace WebProje.Models
         [Required]
         public int KoltukNumarasi { get; set; }
 
+        public int KalkisSehirId { get; set; }
+        public int VarisSehirId { get; set; }
+
+
 
         [ForeignKey("Yol")]
         public int SYolID { get; set; }
@@ -24,7 +28,7 @@ namespace WebProje.Models
       
 
         [ForeignKey("Yolcu")]
-        [Required]
+       
         public int YolcuID { get; set; }
         public YeniKullanci Yolcu { get; set; }
     }

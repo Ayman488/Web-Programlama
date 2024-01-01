@@ -24,6 +24,9 @@ namespace WebProje.Controllers
             }
             else
             {
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View();
             }
         }
@@ -57,7 +60,9 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
-
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(sehir);
             }
         }
@@ -80,6 +85,9 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(sehir);
             }
         }
@@ -131,7 +139,9 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
-
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(sehir);
             }
         }

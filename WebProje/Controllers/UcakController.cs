@@ -28,6 +28,9 @@ namespace WebProje.Controllers
             {
 
                 ViewData["SirketID"] = new SelectList(_context.sirketler, "SirketId", "SirketName");
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View();
             }
         }
@@ -41,20 +44,24 @@ namespace WebProje.Controllers
                 await _context.SaveChangesAsync();
                 koltuklarEkle(ucak.Id, ucak.KoltukSayisi);
                 ViewData["SirketID"] = new SelectList(_context.sirketler, "SirketId", "SirketName");
-                return RedirectToAction("UcusEkle", "Admin");
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
+            return RedirectToAction("UcakEkle", "Admin");
 
         }
         private void koltuklarEkle(int ucakId, int koltuksayisi)
         {
-            for (int i = 0; i < koltuksayisi; i++)
+            for (int i = 1; i <= koltuksayisi; i++) // Start seat numbers at 1
             {
-                Koltuk yenikoltuk = new Koltuk
+                Koltuk yeniKoltuk = new Koltuk
                 {
                     UcakId = ucakId,
+                    SeatNumber = i, // Assign seat number starting from 1
                     IsAvailable = true
                 };
 
-                _context.Koltuklar.Add(yenikoltuk);
+                _context.Koltuklar.Add(yeniKoltuk);
             }
 
             _context.SaveChanges();
@@ -78,7 +85,9 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
-
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(Ucak);
             }
         }
@@ -101,6 +110,10 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
+                ViewData["SirketID"] = new SelectList(_context.sirketler, "SirketId", "SirketName");
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(Ucak);
             }
         }
@@ -113,10 +126,23 @@ namespace WebProje.Controllers
                 return NotFound();
             }
 
-            
-                try
-                {
-                    _context.Update(ucak);
+            var existingUcak = await _context.Ucaklar
+                                    .Include(u => u.Koltuklar)
+                                    .FirstOrDefaultAsync(u => u.Id == id);
+            if (existingUcak == null)
+            {
+                return NotFound();
+            }
+            if (existingUcak.KoltukSayisi != ucak.KoltukSayisi)
+            {
+                KoltuklarDegsitr(existingUcak, ucak.KoltukSayisi);
+            }
+
+            existingUcak.KoltukSayisi = ucak.KoltukSayisi;
+            existingUcak.sirketsId = ucak.sirketsId;
+
+            try
+            {
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -130,7 +156,26 @@ namespace WebProje.Controllers
                         throw;
                     }
                 }
-            return RedirectToAction("UcusEkle", "Admin");
+            return RedirectToAction("UcakEkle", "Admin");
+        }
+
+        private void KoltuklarDegsitr(Ucak ucak, int newKoltukSayisi)
+        {
+            int currentSeats = ucak.Koltuklar.Count;
+
+            if (newKoltukSayisi > currentSeats)
+            {
+                
+                for (int i = currentSeats + 1; i <= newKoltukSayisi; i++)
+                {
+                    ucak.Koltuklar.Add(new Koltuk { UcakId = ucak.Id, SeatNumber = i, IsAvailable = true });
+                }
+            }
+            else if (newKoltukSayisi < currentSeats)
+            {
+                
+                ucak.Koltuklar = ucak.Koltuklar.Take(newKoltukSayisi).ToList();
+            }
         }
         public async Task<IActionResult> Delete(int? id)
         {
@@ -152,7 +197,9 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
-
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(Ucak);
             }
         }
@@ -174,7 +221,7 @@ namespace WebProje.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction("UcusEkle", "Admin");
+            return RedirectToAction("UcakEkle", "Admin");
         }
         private bool UcakExists(int id)
         {

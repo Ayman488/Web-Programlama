@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DKDk9cjgTpuQaT7f6n6M8aG2DJNVOk/8WpI4MWWsaN4=",
+  "Hash": "36wCVsKy6T30TgaF1h/hHsyhPDK1pdCxSQZyuwTO9II=",
   "Source": "WebProje",
   "BasePath": "_content/WebProje",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\4148273.png"
+    },
+    {
+      "Identity": "C:\\Users\\mgrm3\\Desktop\\Files\\Web-Programlama\\WebProje\\wwwroot\\img\\seat_4652184.png",
+      "SourceId": "WebProje",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mgrm3\\Desktop\\Files\\Web-Programlama\\WebProje\\wwwroot\\",
+      "BasePath": "_content/WebProje",
+      "RelativePath": "img/seat_4652184.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\seat_4652184.png"
     },
     {
       "Identity": "C:\\Users\\mgrm3\\Desktop\\Files\\Web-Programlama\\WebProje\\wwwroot\\js\\site.js",

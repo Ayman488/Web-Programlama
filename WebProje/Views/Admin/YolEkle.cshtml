@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "YolEkle";
+    Layout = ViewBag.Layout;
+
 }
 
 <h1>YolEkle</h1>
@@ -24,13 +26,19 @@
                 @Html.DisplayNameFor(model => model.KalkisSehir)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VarisSehri)
+                @Html.DisplayNameFor(model => model.VarisSehir)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.KalkisZaman)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.VarisZaman)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UCAK.sirkets)
             </th>
             <th></th>
         </tr>
@@ -39,16 +47,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.KalkisSehir)
+                    @Html.DisplayFor(modelItem => item.KalkisSehir.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.VarisSehri)
+                    @Html.DisplayFor(modelItem => item.VarisSehir.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.KalkisZaman)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.VarisZaman)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UCAK.sirkets.SirketName)
             </td>
             <td>
                 <a asp-controller="Yol" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

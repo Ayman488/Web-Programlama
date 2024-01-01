@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebProje.Models.Koltuk>
+
+<!-- Display available seats -->
+
+
+<div class="seat-grid">
+    @foreach (var seat in Model)
+    {
+        <form asp-action="KoltukOnayala" method="post">
+            <input type="hidden" name="selectedSeatId" value="@seat.Id" />
+            <input type="hidden" name="selectedSeatId" value="@seat.SeatNumber" />
+            <input type="hidden" name="yolId" value="@ViewBag.YolId" />
+        
+            <input type="submit" value="@($"{seat.SeatNumber}")" class="seat-image  " /><img class="Image-Size" src="~/img/seat_4652184.png" />
+        </form>
+    }
+</div>

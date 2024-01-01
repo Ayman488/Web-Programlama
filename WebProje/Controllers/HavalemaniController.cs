@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebProje.Models;
 
@@ -24,6 +25,11 @@ namespace WebProje.Controllers
             }
             else
             {
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
+                ViewBag.SehirId = new SelectList(_context.sehirler, "Id", "Name");
+
                 return View();
             }
         }
@@ -51,12 +57,15 @@ namespace WebProje.Controllers
                     return NotFound();
                 }
 
-                var havalemani = await _context.havalemaniler.FirstOrDefaultAsync(m => m.Id == id);
+                var havalemani = await _context.havalemaniler.Include(h=>h.Sehir).SingleOrDefaultAsync(h => h.Id == id);
+
                 if (havalemani == null)
                 {
                     return NotFound();
                 }
-
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(havalemani);
             }
         }
@@ -79,6 +88,10 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
+                ViewBag.SehirId = new SelectList(_context.sehirler, "Id", "Name");
                 return View(havalemani);
             }
         }
@@ -130,7 +143,9 @@ namespace WebProje.Controllers
                 {
                     return NotFound();
                 }
-
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 return View(havalemani);
             }
         }

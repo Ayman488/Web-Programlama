@@ -14,7 +14,28 @@ namespace WebProje.Models
         public DbSet<Sirket> sirketler { get; set; }
         public DbSet<Koltuk> Koltuklar { get; set; }
         public DbContextUcus(DbContextOptions<DbContextUcus> options) : base(options) { }
-        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+           
+            modelBuilder.Entity<Yol>()
+                .HasOne(y => y.KalkisSehir)
+                .WithMany(s => s.KalkisYollar)
+                .HasForeignKey(y => y.KalkisSehirId);
+
+            modelBuilder.Entity<Yol>()
+                .HasOne(y => y.VarisSehir)
+                .WithMany(s => s.VarisYollar)
+                .HasForeignKey(y => y.VarisSehirId);
+
+                        modelBuilder.Entity<Yol>()
+                .HasOne(y => y.UCAK) // Assuming you have a navigation property in Yol for Ucak
+                .WithMany(u => u.Yollar) // Assuming you have a navigation property in Ucak for Yollar
+                .HasForeignKey(y => y.UCAKID); // Assuming you have a foreign key property in Yol for UcakId
+
+        }
+
 
     }
 }

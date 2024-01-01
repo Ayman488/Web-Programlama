@@ -5,53 +5,31 @@
 
 <h1>AdminSayfasi</h1>
 
-<h4>Ucak</h4>
 <hr />
-<div class="card-body">
-    <h2 class="text-center mb-4">Ucak</h2>
-    <form asp-action="UcusEkle" asp-controller="Admin" method="post">
-        <div class="form-group">
-            <label for="UcusEkle">Ucak</label>
+
+<div class="container admin-dashboard bg-light">
+    <h1 class="text-center my-5">Admin Dashboard</h1>
+
+    <div class="row">
+        <div class="col-md-2">
+            <a href="@Url.Action("UcakEkle", "Admin")" class="btn btn-primary btn-block mb-3">Uçaklar Yönet</a>
         </div>
-        <button type="submit" class="btn btn-success btn-block">Ucus Sayfasi</button>
-    </form>
-</div>
-<div class="card-body">
-    <h2 class="text-center mb-4">Yol</h2>
-    <form asp-action="YolEkle" asp-controller="Admin" method="post">
-        <div class="form-group">
-            <label for="YolEkle">Yol</label>
+        <div class="col-md-2">
+            <a href="@Url.Action("YolEkle", "Admin")" class="btn btn-primary btn-block mb-3">Yollar Yönet</a>
         </div>
-        <button type="submit" class="btn btn-success btn-block">Yol Sayfasi</button>
-    </form>
-</div>
-<div class="card-body">
-    <h2 class="text-center mb-4">Sehir</h2>
-    <form asp-action="SehirEkle" asp-controller="Admin" method="post">
-        <div class="form-group">
-            <label for="SehirEkle">Sehir</label>
+        <div class="col-md-2">
+            <a href="@Url.Action("SehirEkle", "Admin")" class="btn btn-primary btn-block mb-3">Şehirler Yönet</a>
         </div>
-        <button type="submit" class="btn btn-success btn-block">Sehir Sayfasi</button>
-    </form>
-</div>
-<div class="card-body">
-    <h2 class="text-center mb-4">Havalemani</h2>
-    <form asp-action="HavalemaniEkle" asp-controller="Admin" method="post">
-        <div class="form-group">
-            <label for="HavalemaniEkle">Havalemani</label>
+        <div class="col-md-2">
+            <a href="@Url.Action("HavalemaniEkle", "Admin")" class="btn btn-primary btn-block mb-3">Havalemani Yönet</a>
         </div>
-        <button type="submit" class="btn btn-success btn-block">Havalemani Sayfasi</button>
-    </form>
-</div>
-<div class="card-body">
-    <h2 class="text-center mb-4">Sirket</h2>
-    <form asp-action="SirketEkle" asp-controller="Admin" method="post">
-        <div class="form-group">
-            <label for="SirketEkle">Sirket</label>
+        <div class="col-md-2">
+            <a href="@Url.Action("SirketEkle", "Admin")" class="btn btn-primary btn-block mb-3">Şirket Yönet</a>
         </div>
-        <button type="submit" class="btn btn-success btn-block">Sirket Sayfasi</button>
-    </form>
+    </div>
 </div>
+
+
 
 @section Scripts {
     @{

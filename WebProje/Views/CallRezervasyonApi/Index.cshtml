@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebProje.Models.Rezervasyon>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KoltukNumarasi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KalkisSehirId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VarisSehirId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yol)
+            </th>
+          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KoltukNumarasi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KalkisSehirId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VarisSehirId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yol.Id)
+            </td>
+    
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

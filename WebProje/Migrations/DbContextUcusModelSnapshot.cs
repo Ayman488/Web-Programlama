@@ -55,6 +55,9 @@ namespace WebProje.Migrations
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("boolean");
 
+                    b.Property<int>("SeatNumber")
+                        .HasColumnType("integer");
+
                     b.Property<int>("UcakId")
                         .HasColumnType("integer");
 
@@ -87,6 +90,9 @@ namespace WebProje.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("KalkisSehirId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("KoltukNumarasi")
                         .HasColumnType("integer");
 
@@ -94,6 +100,9 @@ namespace WebProje.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int>("Ucak")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("VarisSehirId")
                         .HasColumnType("integer");
 
                     b.Property<int>("YolcuID")
@@ -205,34 +214,44 @@ namespace WebProje.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("KalkisSehir")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Fiyat")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("KalkisSehirId")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("KalkisZaman")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("VarisSehri")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("UCAKID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("VarisSehirId")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("VarisZaman")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("KalkisSehirId");
+
+                    b.HasIndex("UCAKID");
+
+                    b.HasIndex("VarisSehirId");
+
                     b.ToTable("Yollar");
                 });
 
             modelBuilder.Entity("WebProje.Models.Havalemani", b =>
                 {
-                    b.HasOne("WebProje.Models.Sehir", "sehir")
-                        .WithMany("havalemaniler")
+                    b.HasOne("WebProje.Models.Sehir", "Sehir")
+                        .WithMany("Havalemaniler")
                         .HasForeignKey("SehirId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("sehir");
+                    b.Navigation("Sehir");
                 });
 
             modelBuilder.Entity("WebProje.Models.Koltuk", b =>
@@ -249,7 +268,7 @@ namespace WebProje.Migrations
             modelBuilder.Entity("WebProje.Models.Rezervasyon", b =>
                 {
                     b.HasOne("WebProje.Models.Yol", "Yol")
-                        .WithMany("rezervasyonlar")
+                        .WithMany("Rezervasyonlar")
                         .HasForeignKey("SYolID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -284,9 +303,40 @@ namespace WebProje.Migrations
                     b.Navigation("sirkets");
                 });
 
+            modelBuilder.Entity("WebProje.Models.Yol", b =>
+                {
+                    b.HasOne("WebProje.Models.Sehir", "KalkisSehir")
+                        .WithMany("KalkisYollar")
+                        .HasForeignKey("KalkisSehirId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebProje.Models.Ucak", "UCAK")
+                        .WithMany("Yollar")
+                        .HasForeignKey("UCAKID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebProje.Models.Sehir", "VarisSehir")
+                        .WithMany("VarisYollar")
+                        .HasForeignKey("VarisSehirId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("KalkisSehir");
+
+                    b.Navigation("UCAK");
+
+                    b.Navigation("VarisSehir");
+                });
+
             modelBuilder.Entity("WebProje.Models.Sehir", b =>
                 {
-                    b.Navigation("havalemaniler");
+                    b.Navigation("Havalemaniler");
+
+                    b.Navigation("KalkisYollar");
+
+                    b.Navigation("VarisYollar");
                 });
 
             modelBuilder.Entity("WebProje.Models.Sirket", b =>
@@ -298,6 +348,8 @@ namespace WebProje.Migrations
                 {
                     b.Navigation("Koltuklar");
 
+                    b.Navigation("Yollar");
+
                     b.Navigation("rezervasyonlar");
                 });
 
@@ -308,7 +360,7 @@ namespace WebProje.Migrations
 
             modelBuilder.Entity("WebProje.Models.Yol", b =>
                 {
-                    b.Navigation("rezervasyonlar");
+                    b.Navigation("Rezervasyonlar");
                 });
 #pragma warning restore 612, 618
         }

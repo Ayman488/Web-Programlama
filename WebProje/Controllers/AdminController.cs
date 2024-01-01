@@ -27,7 +27,7 @@ namespace WebProje.Controllers
             return View();
             
         }
-        public IActionResult UcusEkle(Ucak ucak)
+        public IActionResult UcakEkle(Ucak ucak)
         {
             if (HttpContext.Session.GetString("SessionUser") is null)
             {
@@ -36,13 +36,11 @@ namespace WebProje.Controllers
             }
             else
             {
-                
-                
-                
-         
-                
-
-                var Ucak1 = _context.Ucaklar.ToList();
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
+                var Ucak1 = _context.Ucaklar.Include(m=>m.sirkets)
+                    .ToList();
                 return View(Ucak1);
             }
         }
@@ -57,7 +55,10 @@ namespace WebProje.Controllers
             }
             else
             {
-                var Yol1 = _context.Yollar.ToList();
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
+                var Yol1 = _context.Yollar.Include(m=>m.KalkisSehir).Include(m=>m.VarisSehir).Include(m=>m.UCAK).ThenInclude(u => u.sirkets).ToList();
                 return View(Yol1);
             }
         }
@@ -71,6 +72,9 @@ namespace WebProje.Controllers
             }
             else
             {
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 var Sehir1 = _context.sehirler.ToList();
                 return View(Sehir1);
             }
@@ -84,7 +88,12 @@ namespace WebProje.Controllers
             }
             else
             {
-                var havalemani1 = _context.havalemaniler.ToList();
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
+                var havalemani1 = _context.havalemaniler
+                    .Include(m=>m.Sehir)
+                    .ToList();
                 return View(havalemani1);
             }
         }
@@ -97,10 +106,20 @@ namespace WebProje.Controllers
             }
             else
             {
+                var isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+                var layout = isAdmin ? "_AdminLayout" : "_Layout";
+                ViewBag.Layout = layout;
                 var Sirkets1 = _context.sirketler.ToList();
                 return View(Sirkets1);
             }
         }
+
+
+
+
+        //koltuk sec 
+       
+
         public IActionResult UsrLogOut()
         {
             HttpContext.Session.Clear();

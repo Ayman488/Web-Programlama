@@ -7,8 +7,9 @@ namespace WebProje.Models
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Havalemani> havalemaniler { get; set; } = new List<Havalemani>();
 
-
+        public List<Havalemani> Havalemaniler { get; set; } = new List<Havalemani>();
+        public List<Yol> KalkisYollar { get; set; } = new List<Yol>();
+        public List<Yol> VarisYollar { get; set; } = new List<Yol>();
     }
 }

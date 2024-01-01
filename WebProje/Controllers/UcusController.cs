@@ -20,12 +20,7 @@ namespace WebProje.Controllers
         {
             _context = context;
         }
-       
-        // Koltuk rezervasyon süreci
-        
 
-        // POST: Rezervasyon/Create
-    
         public IActionResult Login()
         {
           

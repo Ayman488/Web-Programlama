@@ -26,6 +26,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSGF2YWxlbWFuaUVrbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Admin/KoltukSec.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cS29sdHVrU2VjLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Admin/SehirEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2VoaXJFa2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,12 +38,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2lya2V0RWtsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Admin/UcusEkle.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVWN1c0VrbGUuY3NodG1s
+[C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Admin/UcakEkle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVWNha0VrbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Admin/YolEkle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cWW9sRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/CallRezervasyonApi/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsbFJlemVydmFzeW9uQXBpXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Havalemani/Create.cshtml]
@@ -82,8 +90,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Rezervasyon/KoltukOnayala1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25cS29sdHVrT25heWFsYTEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Rezervasyon/KoltukSec.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25cS29sdHVrU2VjLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Rezervasyon/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25cTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Rezervasyon/YolSec.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV6ZXJ2YXN5b25cWW9sU2VjLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mgrm3/Desktop/Files/Web-Programlama/WebProje/Views/Sehir/Create.cshtml]

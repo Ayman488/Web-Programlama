@@ -9,10 +9,9 @@ namespace WebProje.Models
         public int Id { get; set; }
         public string HavalemanininAdi { get; set; }
 
-
-        [ForeignKey("sehir")]
+        [ForeignKey("Sehir")]
         public int SehirId { get; set; }
-        public Sehir sehir { get; set; }
+        public Sehir Sehir { get; set; }
 
     }
 }

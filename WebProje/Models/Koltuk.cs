@@ -7,6 +7,7 @@ namespace WebProje.Models
     {
         [Key]
         public int Id { get; set; }
+        public int SeatNumber { get; set; }
         public bool IsAvailable { get; set; } = true;
 
         [ForeignKey("ucaks1")]

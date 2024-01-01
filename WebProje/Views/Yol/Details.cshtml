@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = ViewBag.Layout;
+
 }
 
 <h1>Details</h1>
@@ -14,13 +16,13 @@
             @Html.DisplayNameFor(model => model.KalkisSehir)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.KalkisSehir)
+            @Html.DisplayFor(model => model.KalkisSehir.Id)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.VarisSehri)
+            @Html.DisplayNameFor(model => model.VarisSehir)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.VarisSehri)
+            @Html.DisplayFor(model => model.VarisSehir.Id)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.KalkisZaman)
@@ -33,6 +35,12 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.VarisZaman)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fiyat)
         </dd>
     </dl>
 </div>

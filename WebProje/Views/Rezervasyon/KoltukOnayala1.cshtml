@@ -1,0 +1,23 @@
+﻿@model WebProje.Models.Rezervasyon
+
+@{
+    ViewData["Title"] = "Reservation Confirmation";
+}
+
+<h2>Reservation Confirmation</h2>
+
+@if (Model != null)
+{
+    <p>Your seat has been reserved successfully.</p>
+    <p>Reservation ID: @Model.Id</p>
+    <p>Seat Number: @Model.KoltukNumarasi</p>
+    <p>Flight: @Model.Yol.KalkisSehir.Name to @Model.Yol.VarisSehir.Name</p>
+
+    <!-- You can display more details as needed -->
+
+    
+}
+else
+{
+    <p>An error occurred while confirming your reservation. Please try again.</p>
+}

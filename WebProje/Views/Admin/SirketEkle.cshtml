@@ -11,6 +11,8 @@
 </p>
 @{
     string error = TempData["hata"] as string;
+    Layout = ViewBag.Layout;
+
 }
 
 @if (!string.IsNullOrEmpty(error))
@@ -33,9 +35,9 @@
                 @Html.DisplayFor(modelItem => item.SirketName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.SirketId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SirketId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SirketId">Delete</a>
+                    <a asp-controller="Sirket" asp-action="Edit" asp-route-id="@item.SirketId">Edit</a> |
+                    <a asp-controller="Sirket" asp-action="Details" asp-route-id="@item.SirketId">Details</a> |
+                    <a asp-controller="Sirket" asp-action="Delete" asp-route-id="@item.SirketId">Delete</a>
             </td>
         </tr>
 }
